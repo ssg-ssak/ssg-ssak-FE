@@ -4,7 +4,7 @@ import HeaderBottom from './HeaderBottom'
 
 function Header() {
   return (
-    <header className='main_header'>
+    <header className='main_header z-20'>
       <HeaderTop/>
       <HeaderBottom/>
     </header>

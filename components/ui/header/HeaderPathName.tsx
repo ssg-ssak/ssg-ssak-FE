@@ -12,6 +12,7 @@ function HeaderPathName(props :{pathname:string}) {
   const checkPathName=(pathname:String)=>{
     if (pathname==='/coupon')return "쿠폰"
     if (pathname==='/login')return "로그인"
+    if (pathname==='/benefit')return "마이혜택"
   }
 
   const backPage=()=>{

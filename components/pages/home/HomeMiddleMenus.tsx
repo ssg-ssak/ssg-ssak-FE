@@ -1,25 +1,42 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
+import { HomeMiddleMenuType } from '@/types/HomeMiddleMenuType'
+import HomeMiddleMenusWrap from './HomeMiddleMenusWrap'
+import { HomeMiddleMenuData } from '@/datas/HomeMiddleMenuData'
 
-function HomeEventBanner() {
+function HomeMiddleMenus() {
   return (
     <div className='main_menu mt-[-24px] mr-[20px] mb-[24px] ml-[20px] relative z-10 bg-white rounded-[8px] shadow-md'>
-        <h3 className='hidden'>메인메뉴</h3>
+        {/* <h3 className='hidden'>메인메뉴</h3> */}
         <ul className='flex p-[10px] pl-[19px] items-center justify-between text-xs text-center w-full text-slate-700 gap-4'>
-            <li>
-                <Link href="/">
-                    <Image 
-                        src="data:image/png;base64,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"
-                        alt="이벤트 로고"
-                        width={45}
-                        height={45}
-                    ></Image>
-                    이벤트
-                </Link>
+            {
+                HomeMiddleMenuData.map((e:HomeMiddleMenuType)=>(
+                    // <HomeMiddleMenusWrap
+                    //     key={e.id}
+                    //     url={e.url}
+                    //     src={e.src}
+                    //     alt={e.alt}
+                    //     width={e.width}
+                    //     height={e.height}
+                    //     contents={e.contents}
+                    // />
+                    <li key={e.id}>
+                        <Link href={e.url}>
+                            <Image 
+                                src={e.src}
+                                alt={e.alt}
+                                width={e.width}
+                                height={e.height}
+                            ></Image>
+                            {e.contents}
+                        </Link>
+                    </li>
+                ))
                 
-            </li>
-            <li>
+            }
+            
+            {/* <li>
                 <Link href="/">
                     <Image className='ml-[1px]'
                         src="data:image/png;base64,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"
@@ -62,10 +79,10 @@ function HomeEventBanner() {
                     ></Image>
                     영수증
                 </Link>
-            </li>
+            </li> */}
         </ul>
     </div>
   )
 }
 
-export default HomeEventBanner
+export default HomeMiddleMenus
