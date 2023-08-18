@@ -9,7 +9,7 @@ function HeaderBottom() {
 
   return (
     
-    <div className='header_bottom p-4'>
+    <div className='header_bottom p-4 '>
       <nav>
         <ul className='flex gap-7 justify-center item-center'>
           <li className={pathname==='/coupon' ?`text-base font-semibold active` : `text-base font-semibold`}>
