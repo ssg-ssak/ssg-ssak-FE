@@ -6,11 +6,11 @@ import { anotherEventData } from '@/datas/anotherEventData'
 export default function Home() {
   return (
     <main className='mt-[105px]' >
-      <EventBanner 
+      <EventBanner
         data={eventDatas}
         h3_text='Home Banner'
       />
-      <HomeMiddleMenus/>
+      <HomeMiddleMenus />
       <EventBanner 
         data={anotherEventData}
       />
