@@ -24,3 +24,20 @@
     left: 0;
     transition: all 0.3s ease-in-out;
 }
+
+.lnb_header{
+    height: 60px;
+    padding: 16px 0 0 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-top:10px;
+}
+
+.lnb_top{
+    position:relative;
+    
+}
+
+.top_cnt{
+    padding: 18px 20px 24px 20px;
+}

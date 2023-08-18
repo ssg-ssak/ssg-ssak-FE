@@ -12,7 +12,7 @@ export const EventBanner = ({data,h3_text}:{data:eventBannerType[], h3_text?:str
   return (
     <>
     <h3 className='hidden'>{h3_text??"title"}</h3>
-    <div className='slider_wrap'>
+    <div className='slider_wrap mb-[2px]'>
         <ul>
             <Swiper
                 scrollbar={{
