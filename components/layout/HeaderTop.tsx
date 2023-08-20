@@ -22,7 +22,7 @@ function HeaderTop() {
   return (
     <>
     <SideMenu isOpened={isOpened} setIsOpened={setIsOpened}/>
-    <div className='header_top w-auto h-8 flex justify-between items-center '>
+    <div className='header_top w-auto h-8 flex justify-between items-center'>
       { pathname ==='/'
       ?
       <Logo url={'/'} imgUrl={'https://m.shinsegaepoint.com/img/logo_header.840b502c.gif'} imgAlt={'신세계포인트 로고'}/>
