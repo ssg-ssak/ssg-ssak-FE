@@ -20,12 +20,12 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
 
         <div className={styles.lnb_top}>
           <div className={styles.top_cnt}>
-            <div className='app_btn_box '>
-              <p className='login_txt'>로그인해 주세요.</p>
+            <div className={styles.app_btn_box}>
+              <p className={styles.login_txt}>로그인해 주세요.</p>
             </div>
-            <div className='bnt_box '>
-              <Link className='btn_primary' href={"./login"}>로그인</Link>
-              <Link className='btn0' href={"./signup"}>회원가입</Link>
+            <div className={styles.bnt_box}>
+              <Link className={styles.btn_primary} href={"./login"}>로그인</Link>
+              <Link className={styles.btn0} href={"./member/join"}>회원가입</Link>
             </div>
           </div>
         </div>
