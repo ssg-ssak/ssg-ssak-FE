@@ -56,14 +56,30 @@ body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, button, input, textarea, figure, fi
   z-index: 20;
   background-color: var(--ssg-point-secondary);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  /* padding:1rem; */
+  padding-top:16px;
   padding-bottom: 0;
 }
 
-.slider_wrap ul {
-  overflow-x: scroll;
+.swiper_scrollbar {
+  position: absolute;
+  left: 30px;
+  bottom: 46px;
+  width: 73%;
+  height: 2px;
+  z-index: 1;
+  background: rgba(0,0,0,.1);
 }
 
-.slider_wrap ul li {
-  display: inline;
+.swiper-scrollbar-drag {
+  transform: translate3d(190px, 0px, 0px);
+  width: 47.5px;
+  transition-duration: 0ms;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: rgba(0,0,0,.5);
+  border-radius: 10px;
+  left: 0;
+  top: 0;
 }

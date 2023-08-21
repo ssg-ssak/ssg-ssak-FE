@@ -5,7 +5,7 @@ import { anotherEventData } from '@/datas/anotherEventData'
 
 export default function Home() {
   return (
-    <main className='mt-[105px]' >
+    <main className='mt-[100px]' >
       <EventBanner
         data={eventDatas}
         h3_text='Home Banner'
