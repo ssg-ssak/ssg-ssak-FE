@@ -13,6 +13,9 @@ function HeaderPathName(props :{pathname:string}) {
     if (pathname==='/couponpage')return "쿠폰"
     if (pathname==='/login')return "로그인"
     if (pathname==='/benefit')return "마이혜택"
+    if (pathname==='/ingevents') return "이벤트-진행 이벤트"
+    if (pathname==='/endevents') return "이벤트-종료 이벤트"
+    if (pathname==='/winevents') return "이벤트-당첨 확인"
   }
 
   const backPage=()=>{

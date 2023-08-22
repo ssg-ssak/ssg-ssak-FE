@@ -8,12 +8,12 @@ function EventBannerWrap(props:{url:string, imgUrl:string, imgAlt:string}) {
     const {url,imgUrl,imgAlt}=props
 
   return (
-    <li>
+    <li >
         <Link href={url}>
             <Image
             src={imgUrl}
             alt={imgAlt}
-            width={500}
+            width={1000}
             height={362}
             >
             </Image>

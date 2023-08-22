@@ -6,14 +6,15 @@ import { Swiper,SwiperSlide } from 'swiper/react'
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
-import './eventBanner.module.css';
+// import sytles from './eventBanner.module.css';
+import '@/app/globals.css'
 
 export const EventBanner = ({data,h3_text}:{data:eventBannerType[], h3_text?:string}) => {
   return (
     <>
     <h3 className='hidden'>{h3_text??"title"}</h3>
     <div className='slider_wrap mb-[2px]'>
-        <ul>
+        <ul >
             <Swiper
                 scrollbar={{
                     hide:true,
