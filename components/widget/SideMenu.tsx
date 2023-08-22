@@ -4,7 +4,7 @@ import React from 'react'
 import styles from './SideMenu.module.css'
 import Logo from '../ui/header/Logo'
 import Link from 'next/link'
-import './SideMenu.module.css'
+
 import Image from 'next/image'
 
 function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.SetStateAction<Boolean>>}) {

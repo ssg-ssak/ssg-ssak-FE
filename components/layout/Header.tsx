@@ -1,15 +1,10 @@
 import React from 'react'
 import HeaderTop from './HeaderTop'
-import HeaderSwiper from './HeaderSwiper'
+import HeaderSwiper from '../ui/header/HeaderSwiper'
+import { HeaderBottomType } from '@/types/HeaderBottomType'
 
 
-export interface eventsLayoutType{
-  id:number,
-  event_name:string,
-  url:string
-}
-
-function Header({data}:{data:eventsLayoutType[]}) {
+function Header({data}:{data:HeaderBottomType[]}) {
   return (
     <header className='main_header'>
       <HeaderTop/>
