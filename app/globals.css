@@ -83,3 +83,16 @@ body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, button, input, textarea, figure, fi
   left: 0;
   top: 0;
 }
+
+
+/* event tab menu */
+
+.tab_menu_li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0 !important;
+  bottom:0  !important;
+  background: var(--ssg-point-primary-gradient);
+}

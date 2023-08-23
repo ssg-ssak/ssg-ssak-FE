@@ -1,6 +1,6 @@
 import EndEventImageWrap from '@/components/pages/event/EndEventImageWrap'
-import { IngEventData } from '@/datas/ingEventData'
 import { EventImageType } from '@/types/EventImageDataType'
+import { EndEventData} from '@/datas/EndEventData'
 import React from 'react'
 
 function EndEvent() {
@@ -11,7 +11,7 @@ function EndEvent() {
       <div className='pb-[60px]'>
         <ul>
             {
-              IngEventData.map((e:EventImageType)=>(
+              EndEventData.map((e:EventImageType)=>(
                 <li className='text-center relative' key={e.id} >
                   <EndEventImageWrap
                   linkurl={e.url}

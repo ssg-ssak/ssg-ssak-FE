@@ -5,4 +5,5 @@ export interface EventImageType{
   url:string,
   title:string,
   regdate:string,
+  leaveData:string,
 }
