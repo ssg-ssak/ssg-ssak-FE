@@ -37,7 +37,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
           <div className='lnb_favorit_list px-[10px]'>
             <div className='favorit_list_cnt flex'>
               <p className={styles.menu_box}>
-                <Link className={styles.menu} href="/">
+                <Link className={styles.menu} href="/mypoint/pnthistory">
                   <Image
                   src="/images/point_image.png"
                   alt="포인트 내역"
