@@ -1,5 +1,5 @@
 import WinEventImageWrap from '@/components/pages/event/WinEventImageWrap'
-import { IngEventData } from '@/datas/ingEventData'
+import { WinEventData } from '@/datas/winEventData'
 import { EventImageType } from '@/types/EventImageDataType'
 import React from 'react'
 
@@ -11,7 +11,7 @@ function Winevent() {
       <div className='pb-[60px]'>
         <ul>
             {
-              IngEventData.map((e:EventImageType)=>(
+              WinEventData.map((e:EventImageType)=>(
                 <li className='text-center relative' key={e.id} >
                   <WinEventImageWrap
                   linkurl={e.url}

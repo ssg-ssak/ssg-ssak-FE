@@ -15,8 +15,13 @@ const config: Config = {
         'event_end_date':"url('/images/event_end_date.png')",
         'linear_106':"linear-gradient(106.4deg,#eb0000 6.03%,#eb6612 21.34%,#c68200 37.11%,#fc348c 52.88%,#7720a7 67.72%,#0ca19a 82.1%)",
       },
+      colors: {
+        'linear_93': 'linear-gradient(93.4deg,#f40000,#ff8a00 14.06%,#f9ad05 37.76%,#fc348c 62.77%,#b258cb 78.91%,#00c4b4 94.39%)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }
 export default config

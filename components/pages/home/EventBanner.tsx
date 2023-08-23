@@ -6,7 +6,6 @@ import { Swiper,SwiperSlide } from 'swiper/react'
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
-// import sytles from './eventBanner.module.css';
 import '@/app/globals.css'
 
 export const EventBanner = ({data,h3_text}:{data:eventBannerType[], h3_text?:string}) => {

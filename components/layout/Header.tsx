@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderTop from './HeaderTop'
-import HeaderSwiper from '../ui/header/HeaderSwiper'
+import HeaderSwiper from './EventHeaderBottom'
 import { HeaderBottomType } from '@/types/HeaderBottomType'
 
 

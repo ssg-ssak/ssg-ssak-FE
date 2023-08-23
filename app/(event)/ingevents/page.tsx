@@ -24,11 +24,12 @@ function IngEvent() {
               IngEventData.map((e:EventImageType)=>(
                 <li className='text-center relative' key={e.id} >
                   <EventImageWrap
-                  linkurl={e.url}
-                  src={e.imgUrl}
-                  alt={e.alt}
-                  title={e.title}
-                  regdate={e.regdate}
+                    linkurl={e.url}
+                    src={e.imgUrl}
+                    alt={e.alt}
+                    title={e.title}
+                    regdate={e.regdate}
+                    leaveData={e.leaveData}
                   />
                 </li>
               ))
