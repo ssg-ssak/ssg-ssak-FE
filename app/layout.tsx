@@ -1,4 +1,4 @@
-import HomeHeader from '@/components/layout/HomeHeader'
+import HomeHeader from '@/components/layout/Header'
 import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'

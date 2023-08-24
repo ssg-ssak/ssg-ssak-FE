@@ -3,7 +3,7 @@ export const IngEventData=[
     id:1,
     alt:"이벤트 이미지",
     imgUrl:"/images/ingevent1.jpg",
-    url:"/ingevents/detail?eventNo=3472",
+    url:"/event/ingevents/detail?eventNo=3472",
     title:"맘키즈클럽 플러스 행사상품 안내(8월 2차)",
     regdate:"2023-08-16 ~ 08-31",
     leaveData:"9일남음"

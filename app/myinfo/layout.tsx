@@ -1,5 +1,5 @@
 import Footer from "@/components/layout/Footer"
-import HomeHeader from "@/components/layout/HomeHeader"
+import HomeHeader from "@/components/layout/Header"
 import '@/app/globals.css'
 import { Inter } from 'next/font/google'
 

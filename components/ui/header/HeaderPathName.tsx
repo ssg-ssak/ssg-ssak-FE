@@ -15,10 +15,10 @@ function HeaderPathName(props :{pathname:string}) {
     if (pathname==='/couponpage')return "쿠폰"
     if (pathname==='/login')return "로그인"
     if (pathname==='/benefit')return "마이혜택"
-    if (pathname==='/ingevents') return "이벤트-진행 이벤트"
-    if (pathname==='/ingevents/detail'|| pathname==='/endevents/detail' || pathname==='winevents/detail') return "이벤트"
-    if (pathname==='/endevents') return "이벤트-종료 이벤트"
-    if (pathname==='/winevents') return "이벤트-당첨 확인"
+    if (pathname==='/event/ingevents') return "이벤트-진행 이벤트"
+    if (pathname==='/event/ingevents/detail'|| pathname==='/event/endevents/detail' || pathname==='/event/winevents/detail') return "이벤트"
+    if (pathname==='/event/endevents') return "이벤트-종료 이벤트"
+    if (pathname==='/event/winevents') return "이벤트-당첨 확인"
     if (pathname==='/mypoint/pnthistory') return "마이 포인트"
   }
 
