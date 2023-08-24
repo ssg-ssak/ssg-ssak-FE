@@ -7,6 +7,7 @@ import { eventsLayoutData } from '@/datas/eventLayoutData';
 import EventHeaderBottom from './EventHeaderBottom';
 import { MypointLayoutData } from '@/datas/MypointLayoutData';
 import MypointHeaderBottom from './MypointHeaderBottom';
+import { MyinfoLayoutData } from '@/datas/myinfoLayoutData';
 
 function Header() {
   const pathname=usePathname().split('/')[1];
@@ -24,7 +25,10 @@ function Header() {
             : pathname==="mypoint"        // false이면 pathname이 mypoint냐?
 
               ? <MypointHeaderBottom data={MypointLayoutData}/>  //true 이면 mypointbottom가져오고
-              : null        //false이면 null
+              : pathname==="myinfo"
+
+                ? <MypointHeaderBottom data={MyinfoLayoutData}/> //true 이면 myinfobottom가져오고
+                :null    //false이면 null
       }
       
     </header>
