@@ -12,7 +12,8 @@ function SortRadioWrap(props:{props:SortRadioType[]}) {
 
   const handleOnChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
     const {name,value}=e.target;
-
+    console.log(e.target);
+    
     if (name==='sortPointList'){
       setChecked(e.target.id)
       // console.log(name,value);
@@ -23,15 +24,15 @@ function SortRadioWrap(props:{props:SortRadioType[]}) {
     <>
     <div className='sort_radio_box flex text-center '>
     {
-      props.props.map((e:SortRadioType, idx)=>(
+      props.props.map((data:SortRadioType, idx)=>(
         <div key={idx}  className='flex-1 relative'>
           <input
             className={`absolute left-0 top-0 w-full h-full appearance-none`}
             type="radio" 
-            id={e.id} 
-            name={e.name}
+            id={data.id} 
+            name={data.name}
             onChange={handleOnChange}/>
-          <label className={`font-semibold relative text-[14px] h-[42px] leading-10 block ${ checked===e.id ? myPointAfterCheck:myPointAfterUncheck}`} htmlFor={e.id}>{e.contents}</label>
+          <label className={`font-semibold relative text-[14px] h-[42px] leading-10 block ${ checked===data.id ? myPointAfterCheck:myPointAfterUncheck}`} htmlFor={data.id}>{data.contents}</label>
         </div>
       ))
       

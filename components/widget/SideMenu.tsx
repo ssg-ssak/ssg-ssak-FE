@@ -39,7 +39,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
               <p className={styles.menu_box}>
                 <Link className={styles.menu} href="/mypoint/pnthistory">
                   <Image
-                  src="/images/point_image.png"
+                  src="/images/sidemenu/point_image.png"
                   alt="포인트 내역"
                   width={40}
                   height={40}
@@ -50,7 +50,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
               <p className={styles.menu_box}>
                 <Link className={styles.menu} href="/">
                   <Image 
-                  src="/images/point_pw_change.png"
+                  src="/images/sidemenu/point_pw_change.png"
                   alt="포인트 비밀번호 변경"
                   width={40}
                   height={40}
@@ -61,7 +61,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
               <p className={styles.menu_box}>
                 <Link className={styles.menu} href="/">
                   <Image
-                    src="/images/smart_reciept.png"
+                    src="/images/sidemenu/smart_reciept.png"
                     alt="스마트 영수증"
                     width={40}
                     height={40}
@@ -74,7 +74,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
           <p className='select_txt_box pt-[18px] pb-[58px] h-[80px] mx-[24px] border-dashed border-[1px] border-[#f8b404] flex'>
             <button className='ico_btn ml-2 boder-solid border-[1px] left-[10px] border-[#f8b404] w-[40px] h-[40px] rounded-full flex justify-center items-center'>
               <Image 
-                src="/images/favorit_plus.png"
+                src="/images/sidemenu/favorit_plus.png"
                 alt="즐겨찾기 메뉴 선택"
                 width={24}
                 height={24}
