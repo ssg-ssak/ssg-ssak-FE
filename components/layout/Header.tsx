@@ -3,11 +3,11 @@ import React from 'react'
 import HeaderTop from './HeaderTop'
 import HeaderBottom from './HeaderBottom'
 import { usePathname } from 'next/navigation';
-import { eventsLayoutData } from '@/datas/eventLayoutData';
-import EventHeaderBottom from './EventHeaderBottom';
-import { MypointLayoutData } from '@/datas/MypointLayoutData';
-import MypointHeaderBottom from './MypointHeaderBottom';
-import { MyinfoLayoutData } from '@/datas/myinfoLayoutData';
+import { eventsLayoutData } from '@/datas/event/eventLayoutData';
+import ThreeHeaderBottom from './ThreeHeaderBottom';
+import { MypointLayoutData } from '@/datas/mypoint/MypointLayoutData';
+import OverflowHeaderBottom from './OverflowHeaderBottom';
+import { MyinfoLayoutData } from '@/datas/myinfo/myinfoLayoutData';
 
 function Header() {
   const pathname=usePathname().split('/')[1];
@@ -18,17 +18,17 @@ function Header() {
       <HeaderTop/>
       {
         pathname==="" 
-          ? <HeaderBottom/>     //true 홈 헤더 바텀 가져오기
-          : pathname==="event"  //false일때는 pathname이 event 인가? 다시 3항 연산자
+        ? <HeaderBottom/>     //true 홈 헤더 바텀 가져오기
+          
+        : pathname==="event"  //false일때는 pathname이 event 인가? 다시 3항 연산자
+        ? <ThreeHeaderBottom data={eventsLayoutData}/>  //true 이면 eventbottom가져오고
 
-            ? <EventHeaderBottom data={eventsLayoutData}/>  //true 이면 eventbottom가져오고
-            : pathname==="mypoint"        // false이면 pathname이 mypoint냐?
+        : pathname==="mypoint"        // false이면 pathname이 mypoint냐?
+        ? <OverflowHeaderBottom data={MypointLayoutData}/>  //true 이면 mypointbottom가져오고
 
-              ? <MypointHeaderBottom data={MypointLayoutData}/>  //true 이면 mypointbottom가져오고
-              : pathname==="myinfo"
-
-                ? <MypointHeaderBottom data={MyinfoLayoutData}/> //true 이면 myinfobottom가져오고
-                :null    //false이면 null
+        : pathname==="myinfo"
+        ? <OverflowHeaderBottom data={MyinfoLayoutData}/> //true 이면 myinfobottom가져오고
+        :null    //false이면 null
       }
       
     </header>

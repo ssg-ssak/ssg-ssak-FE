@@ -2,7 +2,7 @@
 import { useSearchParams } from 'next/navigation'
 import React from 'react'
 import Image from 'next/image'
-import { IngEventData } from '@/datas/ingEventData'
+import { IngEventData } from '@/datas/event/ingEventData'
 import Link from 'next/link'
 
 function EventDetail() {
@@ -23,10 +23,10 @@ function EventDetail() {
           기간 : 
           <span>{data.regdate}</span>
         </p>
-        <p className='bg-[url("/images/share.png")] bg-contain bg-no-repeat pl-[20px] absolute right-[20px] top-[39px] h-[19px] text-[15px] '>공유</p>
+        <p className='bg-[url("/images/event/share.png")] bg-contain bg-no-repeat pl-[20px] absolute right-[20px] top-[39px] h-[19px] text-[15px] '>공유</p>
       </div>
       <Image
-      src={`/images/${img}.jpg`}
+      src={`/images/event/${img}.jpg`}
       alt='맘키즈클럽 플러스고객을 위한 8월 2차 혜택 안내입니다.'
       width={732}
       height={11550}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {IngEventData} from '@/datas/ingEventData'
+import {IngEventData} from '@/datas/event/ingEventData'
 import { EventImageType } from '@/types/EventImageDataType'
 import EventImageWrap from '@/components/pages/event/EventImageWrap'
 

@@ -1,6 +1,6 @@
 import EndEventImageWrap from '@/components/pages/event/EndEventImageWrap'
 import { EventImageType } from '@/types/EventImageDataType'
-import { EndEventData} from '@/datas/EndEventData'
+import { EndEventData} from '@/datas/event/EndEventData'
 import React from 'react'
 
 function EndEvent() {
