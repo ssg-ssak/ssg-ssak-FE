@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { HomeMiddleMenuType } from '@/types/HomeMiddleMenuType'
 // import HomeMiddleMenusWrap from './HomeMiddleMenusWrap'
-import { HomeMiddleMenuData } from '@/datas/HomeMiddleMenuData'
+import { HomeMiddleMenuData } from '@/datas/home/HomeMiddleMenuData'
 
 function HomeMiddleMenus() {
   return (

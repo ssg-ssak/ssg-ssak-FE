@@ -42,7 +42,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
                   src="/images/point_image.png"
                   alt="포인트 내역"
                   width={40}
-                  height={30}
+                  height={40}
                   ></Image>
                   포인트 내역
                 </Link>
@@ -53,7 +53,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
                   src="/images/point_pw_change.png"
                   alt="포인트 비밀번호 변경"
                   width={40}
-                  height={30}
+                  height={40}
                   ></Image>
                   포인트 비밀번호 변경
                 </Link>
@@ -64,7 +64,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
                     src="/images/smart_reciept.png"
                     alt="스마트 영수증"
                     width={40}
-                    height={30}
+                    height={40}
                     ></Image>
                     스마트 영수증
                 </Link>
