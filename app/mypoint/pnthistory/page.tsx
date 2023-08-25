@@ -4,12 +4,13 @@ import SortRadio from '@/components/pages/mypoint/SortRadio'
 function page() {
   const cardPointLogo="after:ml-[7px] after:w-[33px] after:h-[30px] after:bg-[url('https://m.shinsegaepoint.com/img/point_gradi.d5d9bfaf.png')] after:bg-no-repeat after:bg-cover"
   const receiptsEventLogo="before:bg-[url('/images/receiptEventLogo.png')] before:absolute before:left-6 before:mt-[-20px] before:bg-no-repeat before:w-10 before:h-10 before:bg-cover before:top-1/2"
-  
+
   
   
   return (
     <section className='pt-[106px]'>
       {/* 포인트 카드 형식 */}
+      {/* TODO: 카드 형식을 component로 만들어야됨 */}
       <div className='point_info_cardbox  p-6 bg-white '>
         <div className='cardbox bg-linear_93 overflow-hidden rounded-3xl h-full pb-[2px] shadow-md max-w-sm my-0'>
           <div className='top_cnt flex items-center relative h-[40px] pr-[12px] pl-[20px] justify-between'>

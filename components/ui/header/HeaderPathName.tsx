@@ -10,7 +10,7 @@ function HeaderPathName(props :{pathname:string}) {
   // console.log(pathname);
   
 
-
+// TODO:DATA에서 FITTER해서 RETURN 해주기
   const checkPathName=(pathname:String)=>{
     if (pathname==='/couponpage')return "쿠폰"
     if (pathname==='/login')return "로그인"
