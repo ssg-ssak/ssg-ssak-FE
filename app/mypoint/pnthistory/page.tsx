@@ -1,12 +1,21 @@
 import React from 'react'
 import SortRadio from '@/components/pages/mypoint/SortRadio'
+import { pointList } from '@/datas/mypoint/pointListData'
+import { pointListType } from '@/types/mypoint/pointListType'
 
-function page() {
+async function pntHistory() {
   const cardPointLogo="after:ml-[7px] after:w-[33px] after:h-[30px] after:bg-[url('https://m.shinsegaepoint.com/img/point_gradi.d5d9bfaf.png')] after:bg-no-repeat after:bg-cover"
   const receiptsEventLogo="before:bg-[url('/images/mypoint/receiptEventLogo.png')] before:absolute before:left-6 before:mt-[-20px] before:bg-no-repeat before:w-10 before:h-10 before:bg-cover before:top-1/2"
+  const filterImage="after:w-[20px] after:h-[19px] after:bg-[url('/images/mypoint/filterImage.png')] after:bg-cover after:bg-no-repeat after:inline-block"
 
+  const plusLogo='before:bg-[url("/images/mypoint/plusLogo.jpg")] before:bg-auto before:bg-center before:bg-[length:7px] before:bg-no-repeat  before:inline-block before:w-4 before:h-4 before:bg-[#ea035c] before:rounded-[50%] before:mt-[2px] before:mr-2 '
+  const minusLogo='before:bg-[url("/images/mypoint/minusLogo.jpg")] before:bg-auto before:bg-center before:bg-[length:16px] before:bg-no-repeat  before:inline-block before:w-4 before:h-4 before:bg-[#ea035c] before:rounded-[50%] before:mt-[2px] before:mr-2 '
   
+  // const res= await fetch("http://10.10.10.185:8000/api/v1/point/list")
+  // const data= res.json();
+  // console.log(data);
   
+
   return (
     <section className='pt-[106px]'>
       {/* 포인트 카드 형식 */}
@@ -46,6 +55,7 @@ function page() {
         </div>
       </div>
 
+      {/* 포인트 내역 리스트 */}
       <div className='point_list_box px-5 pt-[25px] pb-[60px]'>
         <SortRadio types={"mypoint"}/>
 
@@ -62,8 +72,54 @@ function page() {
             <p>2023-07-25 ~ 2023-08-25</p>
           </div>
           <button className='relative'>
-            <span className='absolute'>필터</span>
+            <span className={`top-0 h-0 font-[1px] left-[-999rem] indent-[-999em] overflow-hidden ${filterImage}`}></span>
           </button>
+        </div>
+      
+        <div className='point_wrap'>
+          {/* 포인트 내역 총 적립과 사용 */}
+          <div className='point_total flex items-center bg-[#f8f8f8] h-9 px-2'>
+            <p className={`mr-4 text-[#ea035c] text-[13px] font-semibold align-top ${plusLogo}`}>
+              <span>적립</span>
+              <span>32P</span>
+            </p>
+            <p className={`mr-4 text-[13px] font-semibold align-top ${minusLogo}`}>
+              <span>사용</span>
+              <span>0P</span>
+            </p>
+          </div>
+          
+          <ul className='point_history pr-[5px] pl-2'>
+            {
+              pointList.map((p:pointListType)=>(
+                <li key={p.id} className='flex border-b items-center relative flex-wrap min-h-[74px]'>
+                  <p className={`w-[90px] text-[#ea035c] text-sm font-semibold ${plusLogo}` }>
+                    {p.point}P
+                    <span className='block text-[11px] font-normal pl-[23px] pt-[2px]'>{p.type}</span>
+                  </p>
+                  <p className='flex flex-1 flex-wrap items-center text-[14px] leading-6 px-2 font-semibold'>
+                    {p.store} <br/>
+                    
+                      {
+                        p.sub_type &&
+                        <span className='text-[11px] pt-1 leading-3 text-[#767676] w-full'>
+                          {p.sub_type}
+                        </span>
+                      }
+                    
+                  </p>
+                  <div className='absolute top-4 right-[5px]'>
+                    <p className='text-[11px] leading-5 text-[#767676] min-w-[62px]'>{p.date}</p>
+                    {
+                      p.type==="결재적립"?
+                      <button className='text-[12px] text-[#767676] mt-2'>영수증 보기 {">"}</button>
+                      :null
+                    }                    
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
 
@@ -72,4 +128,4 @@ function page() {
   )
 }
 
-export default page
+export default pntHistory

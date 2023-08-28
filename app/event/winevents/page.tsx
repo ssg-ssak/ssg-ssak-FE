@@ -1,6 +1,6 @@
 import WinEventImageWrap from '@/components/pages/event/WinEventImageWrap'
 import { WinEventData } from '@/datas/event/winEventData'
-import { EventImageType } from '@/types/EventImageDataType'
+import { EventImageType } from '@/types/event/EventImageDataType'
 import React from 'react'
 
 function Winevent() {
