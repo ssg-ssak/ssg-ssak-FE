@@ -17,7 +17,7 @@ function IngEvent() {
       </div>
 
 
-      {/* 이벤튼 li list */}
+      {/* 이벤트 li list */}
       <div className='pb-[60px]'>
         <ul>
             {

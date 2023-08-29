@@ -3,7 +3,7 @@ import React from 'react'
 function serviceagree() {
 
   return (
-    <div className='mb-40'>
+    <div>
 
       <div className='px-[20px] pt-[40px] pb-[8px] font-medium'>
         <strong>신세계포인트 제휴사간 통합 서비스</strong>
