@@ -1,5 +1,5 @@
 import EndEventImageWrap from '@/components/pages/event/EndEventImageWrap'
-import { EventImageType } from '@/types/EventImageDataType'
+import { EventImageType } from '@/types/event/EventImageDataType'
 import { EndEventData} from '@/datas/event/EndEventData'
 import React from 'react'
 
