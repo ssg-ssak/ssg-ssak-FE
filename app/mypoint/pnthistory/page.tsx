@@ -8,7 +8,7 @@ async function pntHistory() {
   const receiptsEventLogo="before:bg-[url('/images/mypoint/receiptEventLogo.png')] before:absolute before:left-6 before:mt-[-20px] before:bg-no-repeat before:w-10 before:h-10 before:bg-cover before:top-1/2"
   const filterImage="after:w-[20px] after:h-[19px] after:bg-[url('/images/mypoint/filterImage.png')] after:bg-cover after:bg-no-repeat after:inline-block"
 
-  const plusLogo='before:bg-[url("/images/mypoint/plusLogo.jpg")] before:bg-auto before:bg-center before:bg-[length:7px] before:bg-no-repeat  before:inline-block before:w-4 before:h-4 before:bg-[#ea035c] before:rounded-[50%] before:mt-[2px] before:mr-2 '
+  const plusLogo='before:bg-[url("/images/mypoint/plusLogo.jpg")] before:bg-cover before:bg-center before:bg-[length:7px] before:bg-no-repeat  before:inline-block before:w-4 before:h-4 before:bg-[#ea035c] before:rounded-[50%] before:mt-[2px] before:mr-2 '
   const minusLogo='before:bg-[url("/images/mypoint/minusLogo.jpg")] before:bg-auto before:bg-center before:bg-[length:16px] before:bg-no-repeat  before:inline-block before:w-4 before:h-4 before:bg-[#ea035c] before:rounded-[50%] before:mt-[2px] before:mr-2 '
   
   // const res= await fetch("http://10.10.10.185:8000/api/v1/point/list")
@@ -114,7 +114,7 @@ async function pntHistory() {
                       p.type==="결재적립"?
                       <button className='text-[12px] text-[#767676] mt-2'>영수증 보기 {">"}</button>
                       :null
-                    }                    
+                    }
                   </div>
                 </li>
               ))

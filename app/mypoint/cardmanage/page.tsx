@@ -1,3 +1,4 @@
+import TalbeForm from '@/components/pages/mypoint/TalbeForm'
 import React from 'react'
 
 function cardManage() {
@@ -21,10 +22,8 @@ function cardManage() {
                 <span className='blind overflow-hidden border-0 absolute z-[-1px] w-[1px] h-[1px]'>신세계포인트 상세 안내</span>
               </button>
             </div>
-            
-
+            {/* 카드안에 바디 정보값 */}
             <div className='item_cnt relative bg-white rounded-[18px] m-h-[160px] h-full mx-[2px] px-[20px] pb-[10px] pt-[73px]'>
-              
               <div className='card_num'>
                 <p className='font-bold text-[19px]'>
                   9350
@@ -40,14 +39,16 @@ function cardManage() {
 
               <dl className='flex justify-between items-center pt-[10px] pb-[14px] '>
                 <dt className='text-[13px] font-semibold leading-5'>사용 가능</dt>
-                <dd className={`flex items-center text-[16px] leading-7 justify-center font-medium ${cardPointLogo}`}>13</dd>
+                <dd className={`flex items-center text-[16px] leading-7 justify-center font-medium ${cardPointLogo}`}>33</dd>
               </dl>
-
             </div>
-
           </div>
         </div>
 
+        <div className='table_cnt0 p-4'>
+          <TalbeForm types={"onlinecard"}/>
+          <TalbeForm types={"제휴신용카드"}/>
+        </div>
 
     </section>
   )
