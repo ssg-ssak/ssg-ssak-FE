@@ -5,5 +5,5 @@ function page() {
     <div>page</div>
   )
 }
-
+//modify로 이어짐
 export default page

@@ -18,7 +18,7 @@ function leavepassword() {
         <div className='pb-[25px]'>
           <p className='text-gray-500 text-[12px] pb-[8px] font-semibold'>비밀번호</p>
           <form>
-            <input type="text" id='leavepassword' placeholder='비밀번호를 입력해주세요.' 
+            <input type="text" id='leavepassword' placeholder='비밀번호를 입력해주세요.'
             className='w-full h-10 border border-black-500 px-[16px] rounded-[8px] focus:border-none'/>
           </form>
         </div>
