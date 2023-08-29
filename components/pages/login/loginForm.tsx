@@ -4,16 +4,18 @@ import { log } from 'console';
 import React, { useState } from 'react'
 
 function loginForm() {
-
+  // loginData 상태관리
   const[loginData,setLoginData] =useState<LoginFormDataType>({
     loginId:'',
     password:'',
-    isAutoId:false,
-    isAutoLogin:false
+    isAutoId:false, // auto id default value
+    isAutoLogin:false // auto login default value
   });
 
   const handleOnChange =(e:React.ChangeEvent<HTMLInputElement>)=>{
     const {name,value}=e.target;
+    // console.log(loginData);
+    
 
     
     if(name==='isAutoId' || name === "isAutoLogin"){
@@ -22,6 +24,7 @@ function loginForm() {
         ...loginData,
         [name]:e.target.checked,
       })
+      // console.log(loginData);
     }else{
       console.log(name,value);
       setLoginData({
