@@ -1,4 +1,4 @@
-export interface ErroLogInFormType {
+export interface ErroLogoInFormType {
   loginId: String,
   password: String,
 }
