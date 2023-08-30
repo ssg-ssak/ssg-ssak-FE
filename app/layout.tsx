@@ -3,7 +3,7 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/layout/Footer'
-import { usePathname } from 'next/navigation'
+import AuthProvider from './context/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,11 +18,11 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <html lang="ko" className='dark'>
       <body className={inter.className}>
-
+        <AuthProvider>
         <HomeHeader />
         {children}
         <Footer/>
-
+        </AuthProvider>
         </body>
     </html>
   )
