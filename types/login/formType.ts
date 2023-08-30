@@ -1,4 +1,4 @@
-export interface LoginFormDataType{
+export interface LogInFormDataType{
 
   loginId:string,
   password:string,

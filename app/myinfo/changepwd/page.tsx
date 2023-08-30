@@ -104,9 +104,9 @@ function changepwd() {
         </label>
       </div>
         <ul>
-          {data?.map((data, key) => (
-            <li>
-              <div  className='mb-[13px]' key={key}>
+          {data?.map((data) => (
+            <li key={data.id}>
+              <div  className='mb-[13px]' >
                   <input type='checkbox' name={`select-${data.id}`} className='w-[22px] h-[22px] appearance-none border rounded-full checked:bg-black'
                     onChange={(e) => handleSingleCheck(e.target.checked, data.id)}
                     checked={checkItems.includes(data.id) ? true : false} />

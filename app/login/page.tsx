@@ -1,12 +1,17 @@
 import Logo from '@/components/ui/header/Logo'
 import React from 'react'
-import LoginForm from '@/components/pages/login/loginForm'
+import LoginForm from '@/components/pages/login/LoginForm'
 
 function Login() {
   return (
-    <section className='flex flex-col items-center pt-20 gap-10'>
-      <Logo url={'/'} imgUrl={'https://m.shinsegaepoint.com/img/logo_header.840b502c.gif'} imgAlt={'신세계포인트 로고'}></Logo>
-      <LoginForm />
+    <section className='pt-[56px]'>
+      <div className='p-10'>
+        <h2 className='w-[89px] h-[56px] bg-[url("/images/Logo/Logo.gif")] bg-cover m-auto'></h2>
+        {/* <Logo url={'/'} imgUrl={'https://m.shinsegaepoint.com/img/logo_header.840b502c.gif'} imgAlt={'신세계포인트 로고'}></Logo> */}
+        
+        <LoginForm />
+      </div>
+      
     </section>
   )
 }
