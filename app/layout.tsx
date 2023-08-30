@@ -5,6 +5,8 @@ import { Inter } from 'next/font/google'
 import Footer from '@/components/layout/Footer'
 import { usePathname } from 'next/navigation'
 import { Providers } from './Providers'
+import AuthProvider from './context/AuthProvider'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +21,13 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <html lang="ko" className='light'>
       <body className={inter.className}>
+        <AuthProvider>
         <Providers>
-          <HomeHeader/>
-          {children}
-          <Footer/>
+        <HomeHeader />
+        {children}
+        <Footer/>
         </Providers>
+        </AuthProvider>
         </body>
     </html>
   )

@@ -1,9 +1,12 @@
 'use client'
 import React, { useState } from 'react'
 import { SortRadioType } from '@/types/mypoint/SortRadioType'
+import { useRouter } from 'next/navigation';
+
 
 function SortRadioWrap(props:{props:SortRadioType[]}) {
   const [checked, setChecked]=useState<String>(props.props[0].id);
+  const router=useRouter();
   // console.log(props);
   
   
@@ -12,10 +15,11 @@ function SortRadioWrap(props:{props:SortRadioType[]}) {
 
   const handleOnChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
     const {name,value}=e.target;
-    console.log(e.target);
+    // console.log(e.target);
     
     if (name==='sortPointList'){
       setChecked(e.target.id)
+      router.push(`/mypoint/pnthistory?sorttype=${checked} && point1=save && point2=normal`)
       // console.log(name,value);
       
     }
