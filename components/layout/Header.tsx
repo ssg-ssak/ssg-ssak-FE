@@ -8,6 +8,7 @@ import ThreeHeaderBottom from './ThreeHeaderBottom';
 import { MypointLayoutData } from '@/datas/mypoint/MypointLayoutData';
 import OverflowHeaderBottom from './OverflowHeaderBottom';
 import { MyinfoLayoutData } from '@/datas/myinfo/myinfoLayoutData';
+import { BenefitsLayoutData } from '@/datas/benefits/BenefitsLayoutData'
 
 function Header() {
   const pathname=usePathname().split('/')[1];
@@ -26,9 +27,13 @@ function Header() {
         : pathname==="mypoint"        // false이면 pathname이 mypoint냐?
         ? <OverflowHeaderBottom data={MypointLayoutData}/>  //true 이면 mypointbottom가져오고
 
+        : pathname==="benefits"
+        ? <OverflowHeaderBottom data={BenefitsLayoutData}/>
+
         : pathname==="myinfo"
         ? <OverflowHeaderBottom data={MyinfoLayoutData}/> //true 이면 myinfobottom가져오고
         :null    //false이면 null
+
       }
       
     </header>

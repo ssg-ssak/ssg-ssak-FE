@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import {Switch} from "@nextui-org/switch";
 
 function serviceagree() {
 
@@ -20,7 +23,7 @@ function serviceagree() {
         </div>
         <div>
             <button>
-              버튼
+            <Switch defaultSelected color="danger"></Switch>
             </button>
           </div>
       </div>
@@ -42,7 +45,7 @@ function serviceagree() {
 
             <div>
               <button>
-                버튼
+              <Switch defaultSelected color="danger"></Switch>
               </button>
             </div>
 
@@ -60,7 +63,7 @@ function serviceagree() {
 
         <div>
           <button>
-            버튼
+          <Switch defaultSelected color="danger"></Switch>
           </button>
         </div>
       </div>
