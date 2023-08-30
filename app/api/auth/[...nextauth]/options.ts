@@ -12,7 +12,7 @@ export const options: NextAuthOptions = {
       async authorize(credentials, req) {
 
         if(!credentials?.loginId || !credentials?.password) return null
-        console.log(process.env.NEXT_PUBLIC_API_URL);
+        // console.log(process.env.NEXT_PUBLIC_API_URL);
         
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/login`, {
           method: 'POST',
@@ -26,9 +26,7 @@ export const options: NextAuthOptions = {
           })
         })
 
-
         const user = await res.json()
-  
         if (res.ok && user) {
           console.log(user)
           return user
@@ -40,10 +38,6 @@ export const options: NextAuthOptions = {
   ],
 
   callbacks: {
-    //세션이 밖에 노출되지 않게 만드는 코드
-    async jwt({ token, user }) {
-      return { ...token, ...user };
-    },
 
     async session({ session, token }) {
       session.user = token as any;
