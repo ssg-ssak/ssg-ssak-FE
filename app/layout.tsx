@@ -3,7 +3,6 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/layout/Footer'
-import { usePathname } from 'next/navigation'
 import { Providers } from './Providers'
 import AuthProvider from './context/AuthProvider'
 
