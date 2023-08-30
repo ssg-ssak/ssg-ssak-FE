@@ -3,23 +3,26 @@
 import React from 'react'
 import {usePathname, useRouter} from 'next/navigation'
 import styles from './HeaderPathName.module.css'
+import { HeaderData } from '@/datas/headerdata/HeaderData'
 
 function HeaderPathName(props :{pathname:string}) {
   const {pathname}=props
   const router=useRouter();
   // console.log(pathname);
   
+interface HeaderPathnameType {
+  id:number,
+  pathname: string,
+  title: string
+}
 
 // TODO:DATA에서 FITTER해서 RETURN 해주기
-  const checkPathName=(pathname:String)=>{
-    if (pathname==='/couponpage')return "쿠폰"
-    if (pathname==='/login')return "로그인"
-    if (pathname==='/benefit')return "마이혜택"
-    if (pathname==='/event/ingevents') return "이벤트-진행 이벤트"
-    if (pathname==='/event/ingevents/detail'|| pathname==='/event/endevents/detail' || pathname==='/event/winevents/detail') return "이벤트"
-    if (pathname==='/event/endevents') return "이벤트-종료 이벤트"
-    if (pathname==='/event/winevents') return "이벤트-당첨 확인"
-    if (pathname==='/mypoint/pnthistory') return "마이 포인트"
+  const checkPathName=(urlname:String)=>{
+    const headername = HeaderData.filter((data:HeaderPathnameType) => data.pathname === urlname);
+    // console.log(headername);
+    
+    return headername[0].title
+    
   }
 
   const backPage=()=>{
