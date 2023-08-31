@@ -1,4 +1,3 @@
-'use client'
 import CertForm from '@/components/ui/cert/CertForm'
 import React from 'react'
 
@@ -33,7 +32,7 @@ function Cert() {
         </div>
       </div>
 
-      <CertForm/>
+      <CertForm types={"회원가입"}/>
       
 
     </section>

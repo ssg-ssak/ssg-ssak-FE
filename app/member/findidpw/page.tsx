@@ -17,7 +17,7 @@ function page() {
         </div>
       </div>
 
-      <CertForm/>
+      <CertForm types={"/member/findidresult"}/>
       
       <div className='mt-10 relative py-5 px-7 border-[#e8e8e8] border-[1px] mx-5 mb-20 shadow-md rounded-lg'>
         <p className='text-[13px] leading-5 text-[#767676]'>

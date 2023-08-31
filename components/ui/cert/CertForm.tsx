@@ -1,7 +1,12 @@
+'use client'
 import { CertDataType } from '@/types/login/CertDataType';
+import Link from 'next/link';
 import React, { useState } from 'react'
 
-function CertForm() {
+function CertForm(props:{types:string}) {
+  const {types}=props;
+  console.log(types);
+  
   const [certData, setCertData] = useState<CertDataType>({
     cert: 'phone',
     gender: 'M',
@@ -96,13 +101,25 @@ function CertForm() {
           {/* 이름 성별 외국인 생년월일 휴대폰 적는 폼 */}
           <div className='tab_box px-5 py-10'>
             {/* 이름 입력칸 */}
-            <div className='form_box pb-[16px]'>
-              <p className='pb-[8px] text-[13px] font-[550]'>이름을 입력해 주세요.</p>
-              <form>
-                <input type="text" placeholder='이름 입력'
-                className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
-              </form>
-            </div>
+            {
+              types==="/member/findpwresult"?
+              <div className='form_box pb-[16px]'>
+                <p className='pb-[8px] text-[13px] font-[550]'>아이디를 입력해 주세요.</p>
+                <form>
+                  <input type="text" placeholder='아이디 입력'
+                  className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
+                </form>
+              </div>
+              :
+              <div className='form_box pb-[16px]'>
+                <p className='pb-[8px] text-[13px] font-[550]'>이름을 입력해 주세요.</p>
+                <form>
+                  <input type="text" placeholder='이름 입력'
+                  className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
+                </form>
+              </div>
+            }
+            
 
             {/* 성별선택칸 */}
             <div>
@@ -185,9 +202,9 @@ function CertForm() {
         {/* 버튼 */}
           <div className='px-[20px] py-[40px]'>
               <div className='px-[16px] py-[12px] text-center text-[14px] font-bold rounded-lg bg-linear_110'>
-                <button>
+                <Link href={`${types}`}>
                   인증번호 요청
-                </button>
+                </Link>
               </div>
             </div>
         </>
