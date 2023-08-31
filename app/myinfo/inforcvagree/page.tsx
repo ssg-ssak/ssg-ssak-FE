@@ -13,10 +13,10 @@ function page() {
   ];
 
     // 체크된 아이템을 담을 배열
-  const [checkItems, setCheckItems] = useState([]);
+  const [checkItems, setCheckItems] = useState<number[]>([]);
 
     // 체크박스 단일 선택
-  const handleSingleCheck = (checked, id) => {
+  const handleSingleCheck =  (checked:any, id:number) => {
     if (checked) {
     // 단일 선택 시 체크된 아이템을 배열에 추가
       setCheckItems(prev => [...prev, id]);
@@ -27,10 +27,10 @@ function page() {
   };
 
     // 체크박스 전체 선택
-  const handleAllCheck = (checked) => {
+  const handleAllCheck = (checked:any) => {
     if(checked) {
     // 전체 선택 클릭 시 데이터의 모든 아이템(id)를 담은 배열로 checkItems 상태 업데이트
-      const idArray = [];
+      const idArray:any = [];
       data.forEach((el) => idArray.push(el.id));
       setCheckItems(idArray);
     }
