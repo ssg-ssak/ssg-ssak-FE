@@ -231,7 +231,7 @@ export const HeaderData =[
   },
   {
     id:47,
-    pathname: '/member/findIdResult',
+    pathname: '/member/findidresult',
     title: '아이디 찾기'
   },
   {
@@ -241,7 +241,7 @@ export const HeaderData =[
   },
   {
     id:49,
-    pathname: '/member/findpw/findPwResult',
+    pathname: '/member/findpwresult',
     title: '비밀번호 찾기'
   },
   {
