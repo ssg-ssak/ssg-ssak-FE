@@ -20,7 +20,7 @@ function EndEventImageWrap(props:{ linkurl:string, src:string,  alt:string, titl
             alt={alt}
             width={750}
             height={450}
-          >
+            >
           </Image>
         </Link>
         <div className='pt-[20px] px-[20px] pb-[35px]'>

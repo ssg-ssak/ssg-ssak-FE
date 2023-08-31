@@ -1,5 +1,5 @@
 'use client'
-import { ErroLogInFormType } from '@/types/login/errorType';
+import { ErroLogoInFormType } from '@/types/login/errorType';
 import { LogInFormDataType } from '@/types/login/formType';
 import { signIn } from 'next-auth/react';
 import { redirect } from 'next/dist/server/api-utils';
@@ -20,7 +20,7 @@ function LoginForm() {
     isAutoLogin: false
   });
 
-  const [errorText, setErrorText] = useState<ErroLogInFormType>({
+  const [errorText, setErrorText] = useState<ErroLogoInFormType>({
     loginId: '',
     password: '',
   });
@@ -58,7 +58,7 @@ function LoginForm() {
   }
 
   const handleLoginFetch = async () => {
-    let errText: ErroLogInFormType = {
+    let errText: ErroLogoInFormType = {
       loginId: '',
       password: '',
     }
