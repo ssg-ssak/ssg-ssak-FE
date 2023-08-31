@@ -5,11 +5,11 @@ function page() {
   return (
     <section className='pt-[76px]'>
       <div className='py-10 px-5'>
-        <p className='text-[20px] leading-7 break-keep'>
+        <div className='text-[20px] leading-7 break-keep'>
           <strong>새로운 비밀번호</strong>를 입력해주세요.
           <br/>
           <p className='text-[13px] pt-2 text-[#767676]'>비밀번호 입력 시 아래의 유의사항을 꼭 확인해 주세요.</p>
-        </p>
+        </div>
       </div>
       <div className='pt-0 px-5 pb-[60px]'>
         <div className='mb-10'>
