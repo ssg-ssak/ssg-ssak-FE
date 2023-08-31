@@ -249,5 +249,19 @@ export const HeaderData =[
     pathname: '/benefits/mycoupon',
     title: '마이 혜택'
   },
-  
+  {
+    id:51,
+    pathname: '/benefits/pntPlus/attend',
+    title: '마이 혜택'
+  },
+  {
+    id:52,
+    pathname: '/benefits/pntPlus/roulette',
+    title: '마이 혜택'
+  },
+  {
+    id:53,
+    pathname: '/myinfo/changepwd/cardauth',
+    title: '마이 혜택'
+  },
 ]

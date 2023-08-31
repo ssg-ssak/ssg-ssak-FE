@@ -11,9 +11,9 @@ function changepwd() {
     {id: 4, title: '[필수] 개인정보 수집/이용동의'}
   ];
 
-  const [checkItems, setCheckItems] = useState([]);
+  const [checkItems, setCheckItems] = useState<number[]>([]);
 
-  const handleSingleCheck = (checked, id) => {
+  const handleSingleCheck = (checked:any, id:number) => {
     if (checked) {
       setCheckItems(prev => [...prev, id]);
     } else {
@@ -21,9 +21,9 @@ function changepwd() {
     }
   };
 
-  const handleAllCheck = (checked) => {
+  const handleAllCheck = (checked:any) => {
     if(checked) {
-      const idArray = [];
+      const idArray:any = [];
       data.forEach((el) => idArray.push(el.id));
       setCheckItems(idArray);
     }
