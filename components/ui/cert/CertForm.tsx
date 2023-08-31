@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 
 function CertForm(props:{types:string}) {
   const {types}=props;
-  console.log(types);
+  // console.log(types);
   
   const [certData, setCertData] = useState<CertDataType>({
     cert: 'phone',

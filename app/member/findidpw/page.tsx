@@ -12,7 +12,7 @@ function page() {
             <strong>아이디</strong>가
             <br/>
             생각나지 않으세요?
-            </p>
+          </p>
           <p className='text-[13px] leading-5 mt-2 text-[#767676]'>본인인증 후 아이디를 확인하실 수 있습니다.</p>
         </div>
       </div>
