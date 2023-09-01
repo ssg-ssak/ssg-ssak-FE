@@ -105,7 +105,7 @@ function page() {
         type ="checkbox" />
         <span className='text-[11px] pl-[1px]'>[선택]이마트/신세계 공동 개인정보 수집 및 이용 동의</span>
         </label>
-        </div>
+      </div>
 
         <div>
           <div className='mt-[8px] ml-[11px] pt-[8px] pb-[8px] pl-[20px] border-l border-black'>

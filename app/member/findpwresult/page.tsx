@@ -1,7 +1,8 @@
-import Link from 'next/link'
+
+import Linearbutton from '@/components/ui/button/Linearbutton'
 import React from 'react'
 
-function page() {
+function FindPwResult() {
   return (
     <section className='pt-[76px]'>
       <div className='py-10 px-5'>
@@ -26,13 +27,11 @@ function page() {
             </div>
           </div>
         </div>
-        <div>
-          <Link className=' bg-linear_110 border-[1px] border-[#bcbcbc] block rounded-lg w-full text-center h-[48px] font-semibold p-3 text-[14px] leading-6 mb-[15px]' href={"/login"}>확인</Link>
-        </div>
 
+        <Linearbutton contents='확인' url={"/"}/>
       </div>
     </section>
   )
 }
 
-export default page
+export default FindPwResult

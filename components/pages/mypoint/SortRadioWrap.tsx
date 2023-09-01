@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 function SortRadioWrap(props:{props:SortRadioType[]}) {
   const [checked, setChecked]=useState<String>(props.props[0].id);
-  const router=useRouter();
+  // const router=useRouter();
   // console.log(props);
   
   
@@ -19,7 +19,7 @@ function SortRadioWrap(props:{props:SortRadioType[]}) {
     
     if (name==='sortPointList'){
       setChecked(e.target.id)
-      router.push(`/mypoint/pnthistory?sorttype=${checked} && point1=save && point2=normal`)
+      // router.push(`/mypoint/pnthistory?sorttype=${checked} && point1=save && point2=normal`)
       // console.log(name,value);
       
     }

@@ -60,18 +60,17 @@ body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, button, input, textarea, figure, fi
   padding-top:16px;
   padding-bottom: 0;
 }
-
-.swiper_scrollbar {
-  position: absolute;
-  left: 30px;
-  bottom: 46px;
-  width: 73%;
-  height: 2px;
-  z-index: 1;
-  background: rgba(0,0,0,.1);
+.ssg-swiper {
+  position: relative;
+}
+.ssg-swiper .swiper-scrollbar {
+  margin-bottom: 30px !important;
+  left:20px !important;
+  width: 75% !important;
+  height: 3px !important;
 }
 
-.swiper-scrollbar-drag {
+/* .swiper-scrollbar-drag {
   transform: translate3d(190px, 0px, 0px);
   width: 47.5px;
   transition-duration: 0ms;
@@ -82,7 +81,7 @@ body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, button, input, textarea, figure, fi
   border-radius: 10px;
   left: 0;
   top: 0;
-}
+} */
 
 
 /* event tab menu */
@@ -95,4 +94,11 @@ body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, button, input, textarea, figure, fi
   left: 0 !important;
   bottom:0  !important;
   background: var(--ssg-point-primary-gradient);
+}
+
+.postmodal {
+  position: fixed;
+  z-index: 9999;
+  top:0;
+  left:0;
 }

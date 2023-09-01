@@ -2,6 +2,8 @@
 import { CertDataType } from '@/types/login/CertDataType';
 import Link from 'next/link';
 import React, { useState } from 'react'
+import Linearbutton from '../button/Linearbutton';
+import PhoneCert from '@/components/ui/cert/PhoneCert';
 
 function CertForm(props:{types:string}) {
   const {types}=props;
@@ -50,32 +52,32 @@ function CertForm(props:{types:string}) {
     
   }
 
-  const data = [
-    {id: 1, title: '[필수] 휴대전화 인증 서비스 이용약관'},
-    {id: 2, title: '[필수] 고유식별정보 처리 동의'},
-    {id: 3, title: '[필수] 통신사 이용약관 동의'},
-    {id: 4, title: '[필수] 개인정보 수집/이용동의'}
-  ];
+  // const data = [
+  //   {id: 1, title: '[필수] 휴대전화 인증 서비스 이용약관'},
+  //   {id: 2, title: '[필수] 고유식별정보 처리 동의'},
+  //   {id: 3, title: '[필수] 통신사 이용약관 동의'},
+  //   {id: 4, title: '[필수] 개인정보 수집/이용동의'}
+  // ];
 
-  const [checkItems, setCheckItems] = useState<number[]>([]);
+  // const [checkItems, setCheckItems] = useState<number[]>([]);
 
-  const handleSingleCheck = (checked:any, id:number) => {
-    if (checked) {
-      setCheckItems(prev => [...prev, id]);
-    } else {
-      setCheckItems(checkItems.filter((el) => el !==id));
-    }
-  };
+  // const handleSingleCheck = (checked:any, id:number) => {
+  //   if (checked) {
+  //     setCheckItems(prev => [...prev, id]);
+  //   } else {
+  //     setCheckItems(checkItems.filter((el) => el !==id));
+  //   }
+  // };
 
-  const handleAllCheck = (checked:any) => {
-    if(checked) {
-      const idArray:any = [];
-      data.forEach((el) => idArray.push(el.id));
-      setCheckItems(idArray);
-    }
-    else { setCheckItems([]);
-    }
-  }
+  // const handleAllCheck = (checked:any) => {
+  //   if(checked) {
+  //     const idArray:any = [];
+  //     data.forEach((el) => idArray.push(el.id));
+  //     setCheckItems(idArray);
+  //   }
+  //   else { setCheckItems([]);
+  //   }
+  // }
 
 
   return (
@@ -173,7 +175,8 @@ function CertForm(props:{types:string}) {
           </div>
 
         {/* 휴대전화 인증 약관 폼 */}
-          <div className='px-[20px]'>
+        <PhoneCert/>
+          {/* <div className='px-[20px]'>
             <h3 className='text-[18px] pb-[17px] font-semibold'>휴대전화 인증 약관</h3>
             <div className='mb-[17px] pb-[17px] border-b-2'>
               <label>
@@ -197,16 +200,12 @@ function CertForm(props:{types:string}) {
                   </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
         {/* 버튼 */}
           <div className='px-[20px] py-[40px]'>
-              <div className='px-[16px] py-[12px] text-center text-[14px] font-bold rounded-lg bg-linear_110'>
-                <Link href={`${types}`}>
-                  인증번호 요청
-                </Link>
-              </div>
-            </div>
+          <Linearbutton contents='인증번호 요청' url={types}/>
+          </div>
         </>
         :
         <>
@@ -217,11 +216,7 @@ function CertForm(props:{types:string}) {
                 <br /> 본인인증이 가능합니다.
               </p>
 
-              <div className='px-[16px] py-[12px] text-center text-[14px] font-bold rounded-lg bg-linear_110'>
-                <button>
-                  신용/체크카드 인증
-                </button>
-              </div>
+              <Linearbutton contents='신용/체크카드 인증' url={types}/>
             </div>
           </div>
         </>

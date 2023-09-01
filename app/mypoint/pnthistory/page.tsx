@@ -1,7 +1,4 @@
 import React from 'react'
-import SortRadio from '@/components/pages/mypoint/SortRadio'
-import { pointList } from '@/datas/mypoint/pointListData'
-import { pointListType } from '@/types/mypoint/pointListType'
 import Card from '@/components/pages/mypoint/Card'
 import PointList from '@/components/pages/mypoint/PointList'
 

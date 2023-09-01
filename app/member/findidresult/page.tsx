@@ -1,3 +1,4 @@
+import Linearbutton from '@/components/ui/button/Linearbutton'
 import Link from 'next/link'
 import React from 'react'
 
@@ -20,7 +21,7 @@ function page() {
           </dl>
         </div>
         <div>
-          <Link className=' bg-linear_110 border-[1px] border-[#bcbcbc] block rounded-lg w-full text-center h-[48px] font-semibold p-3 text-[14px] leading-6 mb-[15px]' href={"/login"}>로그인</Link>
+        <Linearbutton contents='로그인' url="/login"/>
         </div>
 
       </div>
