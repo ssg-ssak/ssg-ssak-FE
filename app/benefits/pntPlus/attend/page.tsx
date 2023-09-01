@@ -2,18 +2,19 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { useState } from 'react';
+/* import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
-
+ */
+import AttendCalendar from '@/components/pages/benefits/Calendar'
 
 function attend() {
 
-  const [value, onChange] = useState<Value>(new Date());
+  // const [value, onChange] = useState<Value>(new Date());
 
   return (
     <>
@@ -30,7 +31,8 @@ function attend() {
         </ul>
       </div>
       <div>
-      <Calendar onChange={onChange} value={value} />
+      {/* <Calendar onChange={onChange} value={value} /> */}
+      <AttendCalendar></AttendCalendar>
       </div>
 
       <div>
