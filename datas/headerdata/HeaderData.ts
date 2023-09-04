@@ -264,4 +264,19 @@ export const HeaderData =[
     pathname: '/myinfo/changepwd/cardauth',
     title: '마이 혜택'
   },
+  {
+    id:54,
+    pathname: '/member/join/agree',
+    title: '회원가입 약관동의'
+  },
+  {
+    id:55,
+    pathname: '/member/join/form',
+    title: '회원가입 정보입력'
+  },
+  {
+    id:56,
+    pathname: '/member/join/success',
+    title: '회원가입 완료'
+  },
 ]

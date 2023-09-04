@@ -1,3 +1,4 @@
+import Linearbutton from '@/components/ui/button/Linearbutton'
 import Link from 'next/link'
 import React from 'react'
 
@@ -34,10 +35,7 @@ function Join() {
           </li>
         </ol>
         <div className='mt-6 mb-20'>
-          <Link className=' bg-linear_110 border-[1px] border-[#bcbcbc] block rounded-lg w-full text-center h-[48px] font-semibold p-3 text-[14px] leading-6 mb-[15px]'
-            href="/member/join/cert">
-            회원가입
-          </Link>
+          <Linearbutton contents='회원가입' url="/member/join/cert"/>
           <p className='text-[12px] text-[#767676] text-center leading-5 break-keep mt-6'>만 14세 미만 아동은 회원가입할 수 없습니다.</p>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import type {NextAuthOptions} from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import dotenv from 'dotenv';
 
+dotenv.config();
 export const options: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -14,7 +16,7 @@ export const options: NextAuthOptions = {
         if(!credentials?.loginId || !credentials?.password) return null
         // console.log(process.env.NEXT_PUBLIC_API_URL);
         
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/login`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/log-in`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
