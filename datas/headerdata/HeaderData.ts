@@ -279,4 +279,29 @@ export const HeaderData =[
     pathname: '/member/join/success',
     title: '회원가입 완료'
   },
+  {
+    id:57,
+    pathname: '/mypoint/regaffiliatepntcard/samsung',
+    title: '마이 포인트'
+  },
+  {
+    id:58,
+    pathname: '/mypoint/regaffiliatepntcard/koreanair',
+    title: '마이 포인트'
+  },
+  {
+    id:59,
+    pathname: '/mypoint/regaffiliatepntcard/asiana',
+    title: '마이 포인트'
+  },
+  {
+    id:60,
+    pathname: '/mypoint/pntgiftmain/gift',
+    title: '마이 포인트'
+  },
+  {
+    id:61,
+    pathname: '/mypoint/savepoint',
+    title: '마이 포인트'
+  },
 ]

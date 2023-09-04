@@ -31,13 +31,13 @@ function LoginForm() {
     const { name, value } = e.target;
     
     if(name === 'isAutoId' || name === 'isAutoLogin') {
-      // console.log(name, e.target.checked)
+      console.log(name, e.target.checked)
       setLoginData({
         ...loginData,
         [name]: e.target.checked
       })
     } else {
-      // console.log(name, value)
+      console.log(name, value)
       setLoginData({
         ...loginData,
         [name]: value

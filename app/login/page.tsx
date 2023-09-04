@@ -1,6 +1,5 @@
-import Logo from '@/components/ui/header/Logo'
+import LoginForm from '@/components/pages/login/loginForm'
 import React from 'react'
-import LoginForm from '@/components/pages/login/LoginForm'
 
 function Login() {
   return (

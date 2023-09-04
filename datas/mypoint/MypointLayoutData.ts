@@ -12,7 +12,7 @@ export const MypointLayoutData=[
   {
     id:3,
     layout_name:"제휴포인트 카드 관리",
-    url:"/mypoint/regaffiliatepntcard"
+    url:"/mypoint/regaffiliatepntcard/samsung"
   },
   {
     id:4,
