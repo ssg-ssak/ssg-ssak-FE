@@ -21,16 +21,19 @@ function PostCodeDaum({isView, setIsView, setAddress}: {isView: boolean, setIsVi
     }
 
   return (
-    <div >
-        {
-            isView &&
-            <DaumPostcode
-                className="postmodal"
-                autoClose
-                onComplete={complete} 
-            />
-        }
-    </div>
+    <>
+        <div >
+            {
+                isView &&
+                <DaumPostcode
+                    className="postmodal"
+                    autoClose
+                    onComplete={complete} 
+                />
+            }
+        </div>
+        
+    </>
   )
 }
 

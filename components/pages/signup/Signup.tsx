@@ -20,7 +20,8 @@ function SignUp() {
     }, [address])
 
   return (
-    <>    
+    <>
+      
       <PostCodeDaum isView={isView} setIsView={setIsView} setAddress={setAddress} />
       <div>
         <div className='flex justify-between gap-2'>
@@ -31,11 +32,14 @@ function SignUp() {
             우편번호찾기
           </button>
         </div>
-        <div className=' mt-2 border-[2px]  h-[48px] rounded-lg w-full'>
+        <div className=' mt-2 border-[2px]  h-[48px] rounded-lg w-full relative'>
           <input className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px] ' type="text" value={address?.address} readOnly />
         </div>
         
       </div>
+      <div className={`${isView? "fixed top-0 left-0 w-[100vw] h-[100vh] bg-black opacity-5" : "hidden"}`} onClick={handleOpenModal}>
+      </div>
+      
       {/* <p>{address?.address}</p>
       <p>{address?.zonecode}</p> */}
     </>
