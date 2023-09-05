@@ -18,7 +18,7 @@ function Header() {
     <header className='main_header'>
       <HeaderTop/>
       {
-        pathname==="" 
+        pathname==="" || pathname==="couponpage"
         ? <HeaderBottom/>     //true 홈 헤더 바텀 가져오기
           
         : pathname==="event"  //false일때는 pathname이 event 인가? 다시 3항 연산자
