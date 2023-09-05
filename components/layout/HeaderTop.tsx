@@ -15,7 +15,7 @@ function HeaderTop() {
 
   const handleSideMenu=()=>{
     setIsOpened(!isOpened)
-    console.log(isOpened);
+    // console.log(isOpened);
     
   }
 

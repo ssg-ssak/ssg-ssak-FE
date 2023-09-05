@@ -1,18 +1,32 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './SideMenu.module.css'
 import Logo from '../ui/header/Logo'
 import Link from 'next/link'
-
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.SetStateAction<Boolean>>}) {
 	
 	const {isOpened, setIsOpened}=props
+
+  const pathname=usePathname();
+  
+
+  useEffect(()=>{
+    if(isOpened===true){
+      setIsOpened(!isOpened)
+    }
+    
+  },[pathname])
+  
   
   return (
 		<>
+      {/* opacity div */}
+      <div className={isOpened ? styles.overlay : ''} onClick={()=>setIsOpened(false)}>
+			</div>
       {/* sidemenu 안에 div */}
       <div className={isOpened ? `${styles.sidemenuwrap} ${styles.open}` : `${styles.sidemenuwrap}` }>
         <div className={styles.lnb_header}>
@@ -71,6 +85,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
               </p>
             </div>
           </div>
+          
           <p className='select_txt_box pt-[18px] pb-[58px] h-[80px] mx-[24px] border-dashed border-[1px] border-[#f8b404] flex'>
             <button className='ico_btn ml-2 boder-solid border-[1px] left-[10px] border-[#f8b404] w-[40px] h-[40px] rounded-full flex justify-center items-center'>
               <Image 
@@ -89,8 +104,7 @@ function SideMenu(props: {isOpened: Boolean, setIsOpened:React.Dispatch<React.Se
         </div>
 
 			</div>
-      <div className={isOpened ? styles.overlay : ''} onClick={()=>setIsOpened(false)}>
-			</div>
+      
     </>
     
   )
