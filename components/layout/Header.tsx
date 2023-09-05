@@ -8,7 +8,8 @@ import ThreeHeaderBottom from './ThreeHeaderBottom';
 import { MypointLayoutData } from '@/datas/mypoint/MypointLayoutData';
 import OverflowHeaderBottom from './OverflowHeaderBottom';
 import { MyinfoLayoutData } from '@/datas/myinfo/myinfoLayoutData';
-import { BenefitsLayoutData } from '@/datas/benefits/BenefitsLayoutData'
+import { BenefitsLayoutData } from '@/datas/benefits/BenefitsLayoutData';
+import { MyloungeLayoutData } from '@/datas/mylounge/MyloungeLayoutData';
 
 function Header() {
   const pathname=usePathname().split('/')[1];
@@ -29,6 +30,9 @@ function Header() {
 
         : pathname==="benefits"
         ? <OverflowHeaderBottom data={BenefitsLayoutData}/>
+
+        : pathname==="mylounge"
+        ? <OverflowHeaderBottom data={MyloungeLayoutData}/>
 
         : pathname==="myinfo"
         ? <OverflowHeaderBottom data={MyinfoLayoutData}/> //true 이면 myinfobottom가져오고

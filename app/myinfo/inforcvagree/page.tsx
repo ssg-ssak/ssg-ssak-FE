@@ -181,15 +181,16 @@ function page() {
         </div>
       </div>
 
-      <div className='pt-[32px] pb-[80px] px-[20px]'>
+      <div className='pt-[32px] pb-[80px] px-[20px] bg-[#FBFBFB]'>
         <h3 className='text-[13px] pb-[8px] font-bold'>[유의사항]</h3>
-        <li className='text-[10px] pl-[7px] text-gray-500'>
-        광고정보 수신거부와 관계없이 회원 및 서비스 정책 변경, 주문/배송 안내, 법적 의무사항 등 안내성 고지 사항은 정상 발송됩니다.
+        <li className='text-[10px] pl-[7px] text-gray-500 list-none'>
+        <span className='font-black pr-[4px]'>·</span>광고정보 수신거부와 관계없이 회원 및 서비스 정책 변경, 주문/배송 안내, 법적 의무사항 등 안내성 고지 사항은 정상 발송됩니다.
         </li>
-        <li className='text-[10px] pl-[7px] mt-[4px] text-gray-500'>
-        광고정보 수신거부 전 예약 발송된 광고 메시지가 있는 경우 약 1-2일 동안 발송될 수 있습니다.
+        <li className='text-[10px] pl-[7px] mt-[4px] text-gray-500 list-none'>
+        <span className='font-black pr-[4px]'>·</span>광고정보 수신거부 전 예약 발송된 광고 메시지가 있는 경우 약 1-2일 동안 발송될 수 있습니다.
         </li>
       </div>
+      
   </div>
   )
 }

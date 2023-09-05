@@ -151,7 +151,7 @@ export const HeaderData =[
   },
   {
     id:31,
-    pathname: 'mylounge/recommend',
+    pathname: '/mylounge/recommend',
     title: '마이 라운지'
   },
   {
