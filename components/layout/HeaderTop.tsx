@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {usePathname} from 'next/navigation'
 import Logo from '@/components/ui/header/Logo'
@@ -9,19 +9,31 @@ import SideMenu from '../widget/SideMenu'
 import HeaderPathName from '../ui/header/HeaderPathName'
 
 function HeaderTop() {
-  const [isLogin, setIsLogin] =useState<Boolean>(false)
+  const [isLogin, setIsLogin] =useState<Boolean>(true)
   const [isOpened, setIsOpened] =useState<Boolean>(false)
   const pathname = usePathname();
 
+  useEffect(()=>{
+    if(isOpened) { //조건문은 true
+      document.body.style.overflow = "hidden";
+      // console.log("222222",isLogin); // isLogin true 
+    } else {
+      document.body.style.overflow = "auto";
+      // console.log("3333",isLogin);
+    }
+  },[isOpened])
+
   const handleSideMenu=()=>{
-    setIsOpened(!isOpened)
-    // console.log(isOpened);
+    setIsOpened(!isOpened) //true
+
     
+
   }
+  // console.log('44444',isOpened);
 
   return (
     <>
-    <SideMenu isOpened={isOpened} setIsOpened={setIsOpened}/>
+    <SideMenu isLogin={isLogin} isOpened={isOpened} setIsOpened={setIsOpened}/>
     <div className='header_top w-auto h-8 flex justify-between items-center pl-4 pr-4'>
       { pathname ==='/'
       ?

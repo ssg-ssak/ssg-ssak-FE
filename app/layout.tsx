@@ -19,7 +19,7 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
 
   return (
     <html lang="ko" className='light'>
-      <body className={inter.className}>
+      <body id='ssg' className={inter.className}>
         <AuthProvider>
         <Providers>
         <HomeHeader />
