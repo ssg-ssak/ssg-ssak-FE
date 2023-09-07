@@ -7,11 +7,13 @@ import Link from 'next/link'
 import HeaderUserStatus from './HeaderUserStatus'
 import SideMenu from '../widget/SideMenu'
 import HeaderPathName from '../ui/header/HeaderPathName'
+import BottomCard from './BottomCard'
 
 function HeaderTop() {
   const [isLogin, setIsLogin] =useState<Boolean>(true)
   const [isOpened, setIsOpened] =useState<Boolean>(false)
   const pathname = usePathname();
+  const [bottomCard,setBottomCard]=useState<string>("hidden")
 
   useEffect(()=>{
     if(isOpened) { //조건문은 true
@@ -21,15 +23,22 @@ function HeaderTop() {
       document.body.style.overflow = "auto";
       // console.log("3333",isLogin);
     }
+    
+
   },[isOpened])
 
   const handleSideMenu=()=>{
     setIsOpened(!isOpened) //true
 
-    
-
   }
   // console.log('44444',isOpened);
+  const handleBottomCard=()=>{
+    if(bottomCard==="hidden"){
+      setBottomCard("")
+    }else if(bottomCard===""){
+      setBottomCard("hidden")
+    }
+  }
 
   return (
     <>
@@ -44,7 +53,9 @@ function HeaderTop() {
         <ul className='flex gap-4 justify-center items-center'>
           <li className='text-sm font-medium'>
             {isLogin ?
-            <HeaderUserStatus/>
+            <div onClick={handleBottomCard}>
+              <HeaderUserStatus/>
+            </div>
             :<Link href='/login'>로그인</Link>}
           </li>
           <li onClick={handleSideMenu}>
@@ -57,6 +68,8 @@ function HeaderTop() {
         </ul>
       </nav>
       </div>
+      <BottomCard bottomCard={bottomCard} setBottomCard={setBottomCard} barcodenumber="9350120018635388"/>
+      
     </>
     
   )

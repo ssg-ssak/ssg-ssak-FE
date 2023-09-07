@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import SignInUpButton from '../pages/sidebar/SignInUpButton'
 import FavoriteMenu from '../pages/sidebar/FavoriteMenu'
 import SideBarMenuWrap from '../pages/sidebar/SideBarMenuWrap'
+import Image from 'next/image'
 
 function SideMenu(props: {isLogin:Boolean, isOpened: Boolean, setIsOpened:React.Dispatch<React.SetStateAction<Boolean>>}) {
 	
@@ -19,7 +20,6 @@ function SideMenu(props: {isLogin:Boolean, isOpened: Boolean, setIsOpened:React.
     if(isOpened===true){
       setIsOpened(!isOpened)
     }
-    
   },[pathname])
   
   
@@ -30,8 +30,15 @@ function SideMenu(props: {isLogin:Boolean, isOpened: Boolean, setIsOpened:React.
 			</div>
       {/* sidemenu 안에 div */}
       <div className={isOpened ? `${styles.sidemenuwrap} ${styles.open}` : `${styles.sidemenuwrap}` }>
-        <div className={styles.lnb_header}>
+        <div className={`${styles.lnb_header} flex justify-between`}>
           <Logo url={'/'} imgUrl={'https://m.shinsegaepoint.com/img/logo_header.840b502c.gif'} imgAlt={'신세계포인트 로고'} />
+          <div className='pr-6' onClick={()=>setIsOpened(!isOpened)}>
+            <Image
+            src="/images/sidemenu/ximage.png"
+            alt='닫힘버튼'
+            width={20}
+            height={20}></Image>
+          </div>
         </div>
 
         {/* 로그인 회원가입 버튼 div */}

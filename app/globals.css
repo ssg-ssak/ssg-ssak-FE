@@ -103,3 +103,13 @@ body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, button, input, textarea, figure, fi
   top:0;
   left:0;
 }
+
+.barcode_svg:first-child{
+  width: 200px;
+  height: 100%;
+  
+}
+.barcode_svg:nth-child(2){
+  gap: 10px;
+  
+}
