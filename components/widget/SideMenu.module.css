@@ -11,16 +11,18 @@
 
 .sidemenuwrap {
     width: 320px;
-    height: 1200px;
+    height: 100%;
     background-color: var(--ssg-point-secondary);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -320px;
     z-index: 200;
     transition: all 0.3s ease-in-out;
 }
 
+
 .sidemenuwrap.open {
+    overflow-y: auto;
     left: 0;
     transition: all 0.3s ease-in-out;
 }

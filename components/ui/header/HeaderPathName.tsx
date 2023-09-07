@@ -8,7 +8,7 @@ import { HeaderData } from '@/datas/headerdata/HeaderData'
 function HeaderPathName(props :{pathname:string}) {
   const {pathname}=props
   const router=useRouter();
-  console.log(pathname);
+  // console.log(pathname);
   
 interface HeaderPathnameType {
   id:number,
@@ -19,7 +19,7 @@ interface HeaderPathnameType {
 // TODO:DATA에서 FITTER해서 RETURN 해주기
   const checkPathName=(urlname:String)=>{
     const headername = HeaderData.filter((data:HeaderPathnameType) => data.pathname === urlname);
-    console.log(headername);
+    // console.log(headername);
 
     try {
       if((headername[0].title))return headername[0].title
