@@ -82,7 +82,7 @@ function LoginForm() {
   useEffect(() => {
     if(typeof window !== 'undefined') {
       const autoLogin = localStorage.getItem('autoLogin') || '';
-      // console.log("localStorage",autoLogin.length > 0 ? autoLogin : 'no data');
+      console.log("localStorage",autoLogin.length > 0 ? autoLogin : 'no data');
       if(autoLogin) {
         setLoginData({
           ...loginData,
@@ -102,7 +102,7 @@ function LoginForm() {
           id="loginId" 
           placeholder='아이디' 
           className='w-full rounded-3xl bg-white p-3 text-sm border border-black-500'
-          // defaultValue={loginData.loginId}
+          defaultValue={loginData.loginId}
           onChange={handleOnChange}
         />
         <p className='text-red-500 text-xs'>{errorText.loginId}</p>
