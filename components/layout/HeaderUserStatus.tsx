@@ -15,7 +15,7 @@ function HeaderUserStatus() {
         53
         <Image
         src="https://m.shinsegaepoint.com/img/point_gradi.d5d9bfaf.png"
-        alt="바코드이미지"
+        alt="포인트로고이미지"
         width={25}
         height={22}
         ></Image>

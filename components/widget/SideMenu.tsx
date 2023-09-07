@@ -8,6 +8,7 @@ import SignInUpButton from '../pages/sidebar/SignInUpButton'
 import FavoriteMenu from '../pages/sidebar/FavoriteMenu'
 import SideBarMenuWrap from '../pages/sidebar/SideBarMenuWrap'
 import Image from 'next/image'
+import LogouMypageButton from '../pages/sidebar/LogouMypageButton'
 
 function SideMenu(props: {isLogin:Boolean, isOpened: Boolean, setIsOpened:React.Dispatch<React.SetStateAction<Boolean>>}) {
 	
@@ -42,7 +43,13 @@ function SideMenu(props: {isLogin:Boolean, isOpened: Boolean, setIsOpened:React.
         </div>
 
         {/* 로그인 회원가입 버튼 div */}
-        <SignInUpButton/>
+        {
+          isLogin
+          ?
+          <LogouMypageButton/>
+          :
+          <SignInUpButton/>
+        }
         {/* 즐겨찾기 div */}
         <FavoriteMenu />
         {/* 메뉴 리스트 */}

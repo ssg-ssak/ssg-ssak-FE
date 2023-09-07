@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-
 import {usePathname} from 'next/navigation'
 import Logo from '@/components/ui/header/Logo'
 import Link from 'next/link'
@@ -8,14 +7,21 @@ import HeaderUserStatus from './HeaderUserStatus'
 import SideMenu from '../widget/SideMenu'
 import HeaderPathName from '../ui/header/HeaderPathName'
 import BottomCard from './BottomCard'
+import { useSession } from 'next-auth/react'
 
-function HeaderTop() {
-  const [isLogin, setIsLogin] =useState<Boolean>(true)
+
+
+export default function HeaderTop() {
+  const [isLogin, setIsLogin] =useState<Boolean>(false)
   const [isOpened, setIsOpened] =useState<Boolean>(false)
   const pathname = usePathname();
   const [bottomCard,setBottomCard]=useState<string>("hidden")
+  const session=useSession();
 
+  
+  
   useEffect(()=>{
+    setIsLogin(session.status==="authenticated")
     if(isOpened) { //조건문은 true
       document.body.style.overflow = "hidden";
       // console.log("222222",isLogin); // isLogin true 
@@ -24,8 +30,9 @@ function HeaderTop() {
       // console.log("3333",isLogin);
     }
     
+  },[isOpened,session])
 
-  },[isOpened])
+  
 
   const handleSideMenu=()=>{
     setIsOpened(!isOpened) //true
@@ -74,5 +81,3 @@ function HeaderTop() {
     
   )
 }
-
-export default HeaderTop

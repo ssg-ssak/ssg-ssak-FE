@@ -40,6 +40,9 @@ export const options: NextAuthOptions = {
   ],
 
   callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
 
     async session({ session, token }) {
       session.user = token as any;
@@ -57,7 +60,7 @@ export const options: NextAuthOptions = {
 // 여기가 추가된 부분
   pages: {
     signIn: "/login",
-    signOut: "/logout",
+    // signOut: "/logout",
   },
 // 여기가 추가된 부분
 
