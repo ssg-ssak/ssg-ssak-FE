@@ -221,7 +221,7 @@ export const HeaderData =[
   },
   {
     id:45,
-    pathname: '/member/join',
+    pathname: '/member/join/step1',
     title: '회원가입'
   },
   {

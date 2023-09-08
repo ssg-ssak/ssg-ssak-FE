@@ -2,37 +2,26 @@
 import React from 'react'
 import DaumPostcode from "react-daum-postcode";
 
-function PostCodeDaum({isView, setIsView, setAddress}: {isView: boolean, setIsView: any, setAddress: React.Dispatch<React.SetStateAction<any>>}) {
+function PostCodeDaum({isView, setIsView, setAddress}: {isView: boolean, setIsView: React.Dispatch<React.SetStateAction<boolean>>, setAddress: React.Dispatch<React.SetStateAction<any>>}) {
 
-    const complete = (data : any) =>{
-        // let fullAddress = data.address;
-        // let extraAddress = '';
-
-        // if (data.addressType === 'R') {
-        //     if (data.bname !== '') {
-        //         extraAddress += data.bname;
-        //     }
-        //     if (data.buildingName !== '') {
-        //         extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
-        //     }
-        //     fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
-        // }
+    const handleComplete = (data : any) =>{
+        
         setAddress(data)
+        setIsView(false)
+        
     }
 
   return (
     <>
-        <div >
-            {
-                isView &&
+        {
+            isView &&
+            <div>
                 <DaumPostcode
                     className="postmodal"
-                    autoClose
-                    onComplete={complete} 
+                    onComplete={handleComplete}
                 />
-            }
-        </div>
-        
+            </div>
+        }
     </>
   )
 }

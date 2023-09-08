@@ -13,7 +13,7 @@ function EventBannerWrap(props:{url:string, imgUrl:string, imgAlt:string}) {
             <Image
             src={imgUrl}
             alt={imgAlt}
-            width={1000}
+            width={30000}
             height={362}
             >
             </Image>

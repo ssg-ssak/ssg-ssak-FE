@@ -1,8 +1,9 @@
 'use client'
 import Whitebutton from '@/components/ui/button/Whitebutton';
+import { SignupType } from '@/types/signup/SignupType';
 import React, { useState } from 'react'
 
-function ShinsegaePointCert() {
+function ShinsegaePointCert(props: {signUpData: SignupType, setSignUpData: React.Dispatch<React.SetStateAction<SignupType>>}) {
   const data = [
     {id: 1, title: '[필수] 신세계포인트 회원 이용약관'},
     {id: 2, title: '[필수] 개인정보 수집 및 이용동의'},
@@ -35,13 +36,15 @@ function ShinsegaePointCert() {
 
   return (
     <div className='px-[20px]'>
-      <label>
-          <input type='checkbox' name='select-all' className='w-[22px] h-[22px] appearance-none border-[#505050] border-[1px] rounded-full checked:bg-black'
-          onChange={(e) => handleAllCheck(e.target.checked)}
-          checked={checkItems.length === data.length ? true : false} />
-        <span className='align-top pl-[10px] text-[14px] font-semibold'>모든 동의합니다.</span>
-      </label>
-      <p className='text-[9px] font-semibold'>※ 전체 동의에는 필수 및 선택 정보수집에 대한 동의가 포함되어 있으며, 개별적인 동의 선택도 가능합니다. 선택항목에 대한 동의를 거부하시더라도 피수 서비스 이용은 가능합니다.</p>
+      <div className='border w-full h-[40px] border-black flex justify-center items-center bg-slate-200'>
+        <label className='w-full text-center'>
+            <input type='checkbox' name='select-all' className='appearance-none '
+            onChange={(e) => handleAllCheck(e.target.checked)}
+            checked={checkItems.length === data.length ? true : false} />
+          <span className='align-top pl-[10px] text-[14px] font-semibold'>모든 동의합니다.</span>
+        </label>
+      </div>
+      <p className='text-[9px] pt-2 font-semibold'>※ 전체 동의에는 필수 및 선택 정보수집에 대한 동의가 포함되어 있으며, 개별적인 동의 선택도 가능합니다. 선택항목에 대한 동의를 거부하시더라도 피수 서비스 이용은 가능합니다.</p>
       <h3 className='text-[18px] pb-[17px] font-semibold pt-10'>신세계포인트 통합회원</h3>
       <p className='text-[9px] font-semibold pb-6'>(주)이마트, (주)신세계, (주)경주신세계,(주)신세계동대구복합환승센터 귀종</p>
       <div className='pb-4'>
@@ -53,14 +56,13 @@ function ShinsegaePointCert() {
                   onChange={(e) => handleSingleCheck(e.target.checked, data.id)}
                   checked={checkItems.includes(data.id) ? true : false} />
                 <label>
-                      <span className='align-top text-[12px] pl-[10px] font-semibold'>{data.title}</span>
+                  <span className='align-top text-[12px] pl-[10px] font-semibold'>{data.title}</span>
                 </label>
                 </div>
               </li>
             ))}
         </ul>
       </div>
-      <Whitebutton contents='다음' url='/member/join/form'/> 
     </div>
   )
 }
