@@ -15,7 +15,7 @@ function SignUp() {
     useEffect(() => {
         if(address){
             // setIsView(false);
-            console.log(address)
+            // console.log(address)
         }
     }, [address])
 
