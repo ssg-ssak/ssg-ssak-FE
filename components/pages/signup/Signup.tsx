@@ -1,5 +1,5 @@
 'use client'
-import React, { use, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PostCodeDaum from '../../widget/PostCodeDaum';
 import { DaumAddressType } from '@/types/signup/DaumAddressType';
 
@@ -10,30 +10,24 @@ function SignUp() {
 
     const handleOpenModal = () => {
         setIsView(!isView);
+        
+        
     }
-
-    useEffect(() => {
-        if(address){
-            // setIsView(false);
-            console.log(address)
-        }
-    }, [address])
-
+    // console.log("1111",isView);
   return (
     <>
-      
       <PostCodeDaum isView={isView} setIsView={setIsView} setAddress={setAddress} />
       <div>
         <div className='flex justify-between gap-2'>
           <div className=' mt-2 border-[2px] h-[48px] rounded-lg w-[70%]'>
-            <input className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px]' minLength={6} maxLength={20} type="text" readOnly value={address?.zonecode}  placeholder='우편번호'/>
+            <input className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px]' minLength={6} maxLength={20} type="text" readOnly value={address?.zonecode??""}  placeholder='우편번호'/>
           </div>
           <button className='rounded-lg w-28 h-11 text-center border mt-[10px] text-[13px] font-semibold border-[#EAEAEA]' onClick={handleOpenModal}>
             우편번호찾기
           </button>
         </div>
         <div className=' mt-2 border-[2px]  h-[48px] rounded-lg w-full relative'>
-          <input className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px] ' type="text" value={address?.address} readOnly />
+          <input className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px] ' type="text" readOnly value={address?.address??""}  />
         </div>
         
       </div>

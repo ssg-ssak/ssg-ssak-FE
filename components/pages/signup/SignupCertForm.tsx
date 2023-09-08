@@ -1,15 +1,13 @@
 'use client'
 import { CertDataType } from '@/types/login/CertDataType';
-import Link from 'next/link';
 import React, { useState } from 'react'
-import Linearbutton from '../button/Linearbutton';
 import PhoneCert from '@/components/ui/cert/PhoneCert';
 import { SignupType } from '@/types/signup/SignupType';
 
-function CertForm(props: {types:string}) {
-  const types=props.types
+function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dispatch<React.SetStateAction<SignupType>>}) {
+  
   // console.log(types);
-
+  const { signUpData, setSignUpData } = props;
   
   const [certData, setCertData] = useState<CertDataType>({
     cert: 'phone',
@@ -17,25 +15,25 @@ function CertForm(props: {types:string}) {
     foreigner: "no",
 
   });
-  // const handleOnChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
-  //   const {name,value}=e.target;
+  const handleOnChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+    const {name,value}=e.target;
 
-  //   if( name === "phoneNumber" || name === "address" || name === "email" || name === "phone"){
-  //     // console.log('111',name,value);
+    if( name === "phoneNumber" || name === "address" || name === "email" || name === "phone"){
+      // console.log('111',name,value);
       
-  //     setSignUpData({
-  //       ...signUpData,
-  //       [name]:value
-  //     })
-  //   } else {
-  //     // console.log('222',name,value);
-  //     setSignUpData({
-  //       ...signUpData,
-  //       [name]:value
-  //     })
+      setSignUpData({
+        ...signUpData,
+        [name]:value
+      })
+    } else {
+      // console.log('222',name,value);
+      setSignUpData({
+        ...signUpData,
+        [name]:value
+      })
       
-  //   }
-  // }
+    }
+  }
   // console.log(signUpData);
   
 
@@ -100,25 +98,13 @@ function CertForm(props: {types:string}) {
           {/* 이름 성별 외국인 생년월일 휴대폰 적는 폼 */}
           <div className='tab_box px-5 py-10'>
             {/* 이름 입력칸 */}
-            {
-              types==="/member/findpwresult"?
-              <div className='form_box pb-[16px]'>
-                <p className='pb-[8px] text-[13px] font-[550]'>아이디를 입력해 주세요.</p>
-                <form>
-                  <input type="text" placeholder='아이디 입력'
-                  className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
-                </form>
-              </div>
-              :
-              <div className='form_box pb-[16px]'>
-                <p className='pb-[8px] text-[13px] font-[550]'>이름을 입력해 주세요.</p>
-                <form>
-                  <input name='userName' type="text" placeholder='이름 입력'
-                  className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
-                </form>
-              </div>
-            }
-            
+            <div className='form_box pb-[16px]'>
+              <p className='pb-[8px] text-[13px] font-[550]'>이름을 입력해 주세요.</p>
+              <form>
+                <input name='userName' onChange={handleOnChange} type="text" placeholder='이름 입력'
+                className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
+              </form>
+            </div>
 
             {/* 성별선택칸 */}
             <div>
@@ -164,7 +150,7 @@ function CertForm(props: {types:string}) {
                 </select>
               </div>
                 <form className='mt-2'>
-                  <input name='phone' type="number" placeholder='-없이 휴대폰 번호 입력'
+                  <input name='phoneNumber' onChange={handleOnChange} type="number" placeholder='-없이 휴대폰 번호 입력'
                   className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
                 </form>
               </div>
@@ -175,9 +161,6 @@ function CertForm(props: {types:string}) {
         <PhoneCert/>
 
         {/* 버튼 */}
-          <div className='px-[20px] py-[40px]'>
-          <Linearbutton contents='인증번호 요청' url={types}/>
-          </div>
         </>
         :
         <>
@@ -187,8 +170,6 @@ function CertForm(props: {types:string}) {
                 보유하신 <span className='font-bold'>신용/체크카드</span>로
                 <br /> 본인인증이 가능합니다.
               </p>
-
-              <Linearbutton contents='신용/체크카드 인증' url={types}/>
             </div>
           </div>
         </>
@@ -198,4 +179,4 @@ function CertForm(props: {types:string}) {
   )
 }
 
-export default CertForm
+export default SignupCertForm
