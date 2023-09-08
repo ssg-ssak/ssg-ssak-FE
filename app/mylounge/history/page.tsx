@@ -122,19 +122,19 @@ function history() {
       </p>
     </div>
 
-    <div className='brand_use_wrap02 px-[20px] pb-[40px]'>
-    <div className='text-[#767676] align-middle text-center px-0 text-[12px] font-semibold break-keep py-[40px]'>
-        <p className={`relative pt-16 ${noTxtLogo}`}>
-        많이 쇼핑하는 브랜드 정보가 없습니다.
-        </p>
+      <div className='brand_use_wrap02 px-[20px] pb-[40px]'>
+        <div className='text-[#767676] align-middle text-center px-0 text-[12px] font-semibold break-keep py-[40px]'>
+          <p className={`relative pt-16 ${noTxtLogo}`}>
+          많이 쇼핑하는 브랜드 정보가 없습니다.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div className='px-[20px] pb-[25px]'>
+      <div className='px-[20px] pb-[25px]'>
       <Linearbutton contents='고객님을 위한 추천 서비스를 만나보세요!' url='/mylounge/recommend'/>
-    </div>
+      </div>
 
-    <div className='pt-[32px] pb-[80px] px-[20px] bg-[#FBFBFB]'>
+      <div className='pt-[32px] pb-[80px] px-[20px] bg-[#FBFBFB]'>
         <h3 className='text-[13px] pb-[8px] font-bold'>[유의사항]</h3>
         <li className='text-[11px] pl-[7px] text-gray-500 list-none'>
         <span className='font-black pr-[4px]'>·</span>매년 1월 1일 ~ 전일까지의 신세계포인트 적립/사용한 결제 건을 기준으로 집계되며 환불, 취소 등으로 인한 실제 결제 금액과 일부 차이가 있을 수 있습니다.

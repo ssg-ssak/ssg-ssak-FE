@@ -206,7 +206,7 @@ export const HeaderData =[
   },
   {
     id:42,
-    pathname: 'spoint/pointservice',
+    pathname: '/spoint/pointservice/emart',
     title: '신세계포인트'
   },
   {
@@ -303,5 +303,30 @@ export const HeaderData =[
     id:61,
     pathname: '/mypoint/savepoint',
     title: '마이 포인트'
+  },
+  {
+    id:62,
+    pathname: '/spoint/pointservice/shinsegae',
+    title: '신세계포인트'
+  },
+  {
+    id:63,
+    pathname: '/spoint/pointservice/SSGCOM',
+    title: '신세계포인트'
+  },
+  {
+    id:64,
+    pathname: '/spoint/pointservice/everyday',
+    title: '신세계포인트'
+  },
+  {
+    id:65,
+    pathname: '/spoint/pointservice/emart24',
+    title: '신세계포인트'
+  },
+  {
+    id:66,
+    pathname: '/spoint/pointservice/etc',
+    title: '신세계포인트'
   },
 ]

@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation'
 
 function MembershipCard() {
   const params=usePathname().split('/')[3];
+  console.log(params);
+  
   return (
     <MemberShipCard types={params}/>
 

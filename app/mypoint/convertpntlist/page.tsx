@@ -2,7 +2,7 @@ import Linearbutton from '@/components/ui/button/Linearbutton'
 import Redbutton from '@/components/ui/button/Redbutton'
 import React from 'react'
 
-function Converpntlist() {
+function Convertpntlist() {
   return (
     <section className='pt-[106px]'>
       <div className='p-4 py-10'>
@@ -59,4 +59,4 @@ function Converpntlist() {
   )
 }
 
-export default Converpntlist
+export default Convertpntlist
