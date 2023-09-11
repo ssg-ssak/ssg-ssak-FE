@@ -5,22 +5,22 @@ function tempcardcert() {
   return (
     <>
     <main className='mt-[106px]'>
-    <div className='px-[20px] py-[40px]'>
-          <p className='text-[19px] font-semibold'>
-          <strong className='font-550 text-[#a16c0c] font-semibold'>임시 발금 카드</strong>
-            를 인증하고
-          <br />
-            다양한 서비스를 이용해보세요.
-          </p>
-          
-          <p className='text-[13px] text-[#767676] font-semibold pt-[8px] leading-[24px]'>
-            본인 인증 없이 발급받은 카드를 한 번만 본인 인증하면
-          <br />
-            온/오프라인 통합 관리, 제휴 신용카드 연동 등
-          <br />
-            더욱 편리한 서비스 이용이 가능합니다.
-          </p>
-        </div>
+      <div className='px-[20px] py-[40px]'>
+        <p className='text-[19px] font-semibold'>
+        <strong className='font-550 text-[#a16c0c] font-semibold'>임시 발급 카드</strong>
+          를 인증하고
+        <br />
+          다양한 서비스를 이용해보세요.
+        </p>
+        
+        <p className='text-[13px] text-[#767676] font-semibold pt-[8px] leading-[24px]'>
+          본인 인증 없이 발급받은 카드를 한 번만 본인 인증하면
+        <br />
+          온/오프라인 통합 관리, 제휴 신용카드 연동 등
+        <br />
+          더욱 편리한 서비스 이용이 가능합니다.
+        </p>
+      </div>
 
         <div 
       className=' relative 
