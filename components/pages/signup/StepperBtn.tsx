@@ -16,7 +16,7 @@ function StepperBtn({btnText, stepId, setStepId,signUpData,setSignUpData} : {btn
     userPassword : string,
     checkPassword :string,
     phoneNumber : string,
-    postCode:string,
+    zonecode:string,
     address : string,
     detailaddress:string,
   }
@@ -29,7 +29,7 @@ function StepperBtn({btnText, stepId, setStepId,signUpData,setSignUpData} : {btn
       userPassword : "",
       checkPassword :"",
       phoneNumber : "",
-      postCode:"",
+      zonecode:"",
       address : "",
       detailaddress:"",
     }
@@ -54,17 +54,17 @@ function StepperBtn({btnText, stepId, setStepId,signUpData,setSignUpData} : {btn
       if(signUpData.userId === "" || signUpData.userId === undefined) errText.userId="아이디를 입력해주세요"
       if(signUpData.userPassword === "" || signUpData.userPassword === undefined) errText.userPassword="비밀번호를 입력해주세요"
       if(signUpData.checkPassword !== signUpData.userPassword) errText.checkPassword="비밀번호가 다릅니다"
-      if(signUpData.postCode === "" || signUpData.postCode === undefined) errText.postCode="주소를 입력해주세요"
+      if(signUpData.zonecode === "" || signUpData.zonecode === undefined) errText.zonecode="주소를 입력해주세요"
       if(signUpData.detailaddress === "" || signUpData.detailaddress === undefined) errText.detailaddress="상세주소를 입력해주세요"
-      if(errText.userId !== "" || errText.userPassword !== "" || errText.checkPassword !=="" || errText.postCode !=="" || errText.detailaddress !==""){
+      if(errText.userId !== "" || errText.userPassword !== "" || errText.checkPassword !=="" || errText.zonecode !=="" || errText.detailaddress !==""){
         if(errText.userId !== ""){
           alert(errText.userId)
         }else if(errText.userPassword !== ""){
           alert(errText.userPassword)
         }else if(errText.checkPassword !== "") {
           alert(errText.checkPassword)
-        }else if(errText.postCode){
-          alert(errText.postCode)
+        }else if(errText.zonecode){
+          alert(errText.zonecode)
         }else if(errText.detailaddress){
           alert(errText.detailaddress)
         }

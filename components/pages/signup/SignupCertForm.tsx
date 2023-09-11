@@ -130,7 +130,7 @@ function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dis
             <div className='pb-[16px]'>
               <p className='pb-[8px] text-[13px] font-[550]'>생년월일을 입력해주세요.(예:19990101)</p>
                 <form>
-                  <input name="birth" onChange={handleOnChange} type="number" placeholder='법정생년월일 8자리'
+                  <input name="birth" onChange={handleOnChange} type="number" placeholder='법정생년월일 8자리' maxLength={8}
                   className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
                 </form>
             </div>

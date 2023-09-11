@@ -24,7 +24,7 @@ function SignUpStepper() {
     userPassword : "",
     checkPassword :"",
     phoneNumber : "",
-    postCode:"",
+    zonecode:"",
     address : "",
     detailaddress:"",
   })

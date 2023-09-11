@@ -8,21 +8,31 @@ function SignUp(props: {signUpData: SignupType, setSignUpData: React.Dispatch<Re
 
     const [isView, setIsView] = useState<boolean>(false);
     const [address, setAddress] = useState<DaumAddressType>();
-    const {signUpData,setSignUpData}=props
+    const {signUpData,setSignUpData}=props;
 
     const handleOpenModal = () => {
         setIsView(!isView);  
     }
     
     useEffect(()=>{
-      setSignUpData({
-        ...signUpData,
-        postCode:address?.zonecode||""
-      })
-      setSignUpData({
-        ...signUpData,
-        address:address?.address||""
-      })
+      // console.log(address?.zonecode);
+      // console.log(address?.address);
+      // console.log(address);
+      
+      if(address?.zonecode && address?.address){
+        setSignUpData({
+          ...signUpData,
+          zonecode:address.zonecode,
+          address:address.address
+        })
+        
+      }
+      // if(address?.address){
+        // setSignUpData({
+        //   ...signUpData,
+        //   address:address.address
+        // })
+      // }
       
     },[address])
 
@@ -34,7 +44,7 @@ function SignUp(props: {signUpData: SignupType, setSignUpData: React.Dispatch<Re
       <div>
         <div className='flex justify-between gap-2'>
           <div className=' mt-2 border-[2px] h-[48px] rounded-lg w-[70%]'>
-            <input className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px]' minLength={6} maxLength={20} type="text" readOnly value={address?.zonecode??""}  placeholder='우편번호'/>
+            <input className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px]'  type="number" readOnly value={address?.zonecode??""}  placeholder='우편번호'/>
           </div>
           <div className='flex justify-center items-center rounded-lg w-28 h-11 text-center border mt-[10px] text-[13px] font-semibold border-[#EAEAEA]' onClick={handleOpenModal}>
             우편번호찾기

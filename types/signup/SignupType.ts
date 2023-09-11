@@ -5,8 +5,7 @@ export interface SignupType{
   userPassword : string,
   checkPassword:string,
   phoneNumber : string,
-  postCode:string,
+  zonecode:string,
   address : string,
   detailaddress:string,
-
 }
