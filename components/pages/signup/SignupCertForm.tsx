@@ -8,19 +8,14 @@ function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dis
   
   // console.log(types);
   const { signUpData, setSignUpData } = props;
-  
-  const [certData, setCertData] = useState<CertDataType>({
-    cert: 'phone',
-    gender: 'M',
-    foreigner: "no",
 
-  });
+
+  // 로그인 폼 데이터 관리
   const handleOnChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
     const {name,value}=e.target;
 
-    if( name === "phoneNumber" || name === "address" || name === "email" || name === "phone"){
+    if( name === "userName" || name === "birth" || name === "phoneNumber"){
       // console.log('111',name,value);
-      
       setSignUpData({
         ...signUpData,
         [name]:value
@@ -33,9 +28,7 @@ function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dis
       })
       
     }
-  }
-  // console.log(signUpData);
-  
+  } 
 
   // 휴대폰인증, 카드인증시 css변화
   const PhoneImageOff="text-[#767676] after:absolute after:bg-[url('https://m.shinsegaepoint.com/img/ico_find_tab.f8d8ffcf.png')] after:w-[45px] after:h-[40px] after:left-[44%] after:ml-[-10px] after:top-[15px] after:bg-[85px_auto] after:bg-[right_0px_top_2px]"
@@ -49,7 +42,15 @@ function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dis
   const liOn="bg-black text-white"
   const liOff="bg-[#f5f5f5]"
 
+  // cert상태 관리
+  const [certData, setCertData] = useState<CertDataType>({
+    cert: 'phone',
+    gender: 'M',
+    foreigner: "no",
 
+  });
+
+  // 성별,외국인,휴대폰,카드상태
   const  handleChecked= async (e: React.MouseEvent<HTMLLIElement, MouseEvent>)=>{
     const target = e.currentTarget;
     const id = target.dataset.id;
@@ -72,8 +73,6 @@ function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dis
     }
     
   }
-
-
 
   return (
     <>
@@ -131,7 +130,7 @@ function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dis
             <div className='pb-[16px]'>
               <p className='pb-[8px] text-[13px] font-[550]'>생년월일을 입력해주세요.(예:19990101)</p>
                 <form>
-                  <input type="text" placeholder='법정생년월일 8자리'
+                  <input name="birth" onChange={handleOnChange} type="number" placeholder='법정생년월일 8자리' maxLength={8}
                   className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
                 </form>
             </div>

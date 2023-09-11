@@ -145,7 +145,7 @@ function LoginForm() {
         <ul className='flex justify-evenly text-center pt-8 font-bold text-sm'>
           <li className='border border-white border-r-slate-200 pr-6' onClick={()=>router.push("/member/findidpw")}>아이디찾기</li>
           <li className='border border-white border-r-slate-200 pr-6' onClick={()=>router.push("/member/findpw")}>비밀번호 찾기</li>
-          <li onClick={()=>router.push("/member/join/step1")}>회원가입</li>
+          <li onClick={()=>router.push("/member/join")}>회원가입</li>
         </ul>
         {/* <p>LOGIN ID : {loginData.loginId}</p>
         <p>PASSWORD : {loginData.password}</p>

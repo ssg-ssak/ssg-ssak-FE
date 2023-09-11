@@ -20,10 +20,11 @@ function SignUpStepper() {
   const [signUpData,setSignUpData]=useState<SignupType>({
     userId : "", 
     userName : "",
+    birth:"",
     userPassword : "",
     checkPassword :"",
     phoneNumber : "",
-    postCode:"",
+    zonecode:"",
     address : "",
     detailaddress:"",
   })
@@ -52,6 +53,8 @@ function SignUpStepper() {
       stepperComponent[stepId-1][stepId]
     }
       <StepperBtn 
+        signUpData={signUpData} 
+        setSignUpData={setSignUpData}
         btnText={stepperComponent[stepId-1]['btnTxt']}
         stepId={stepId}
         setStepId={setStepId} 

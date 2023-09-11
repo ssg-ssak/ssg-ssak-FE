@@ -14,8 +14,8 @@ function SignupSuccess(props: {signUpData: SignupType, setSignUpData: React.Disp
       <div className='px-5'>
         <div className='relative'>
           <p className='text-[18px] leading-5 mt-2 font-medium'>
-            <strong>임*님</strong>
-            , AAAAA ID로<br/>
+            <strong>{signUpData.userName}</strong>
+            , {signUpData.userId} ID로<br/>
             <span>신세계포인트 <strong>통합 회원 가입</strong>이</span><br/>
             완료되었습니다.
           </p>
@@ -28,18 +28,16 @@ function SignupSuccess(props: {signUpData: SignupType, setSignUpData: React.Disp
           <p className='pb-3'>
             <strong>휴대폰 번호</strong>
             <br />
-            010-95**-85**
+            {signUpData.phoneNumber}
           </p>
           <p className='pb-3'>
             <strong>주소</strong>
             <br />
-            부산
+            {signUpData.zonecode} <br />
+            {signUpData.address} <br />
+            {signUpData.detailaddress}
           </p>
-          <p className='pb-3'>
-            <strong>이메일</strong>
-            <br />
-            없음
-          </p>
+          
         </div>
       </div>
 
@@ -59,7 +57,7 @@ function SignupSuccess(props: {signUpData: SignupType, setSignUpData: React.Disp
 
       <div className=' p-4'>
         <div className='pb-4 font-medium'>
-          <strong>임*섭</strong>님, <br />
+          <strong>{signUpData.userName}</strong>님, <br />
           통합 ID로 더 다양한 서비스를 <br />
           이용할 수 있습니다.
         </div>

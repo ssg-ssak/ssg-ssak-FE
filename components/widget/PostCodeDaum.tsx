@@ -18,6 +18,7 @@ function PostCodeDaum({isView, setIsView, setAddress}: {isView: boolean, setIsVi
             <div>
                 <DaumPostcode
                     className="postmodal"
+                    autoClose
                     onComplete={handleComplete}
                 />
             </div>

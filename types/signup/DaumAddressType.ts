@@ -1,6 +1,7 @@
 export interface DaumAddressType {
   address: string,
   addressEnglish: string,
+  zonecode: string,
   addressType: string,
   apartment: string,
   autoJibunAddress: string,
@@ -37,5 +38,5 @@ export interface DaumAddressType {
   sigunguEnglish: string,
   userLanguageType: string,
   userSelectedType: string,
-  zonecode: string
+  
 }
