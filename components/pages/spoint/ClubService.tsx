@@ -5,7 +5,6 @@ import Link from 'next/link'
 function ClubService() {
   return (
     <div>
-    <h3 className='text-[17px] font-semibold pt-[40px] px-[20px] pb-[16px]'>클럽 서비스</h3>
     <ul className='pb-[60px] font-semibold'>
       <li className='text-[#00635e] w-full h-[156px] mb-[8px] bg-[#e6f3f3] pt-[20px] pb-[24px] px-[30px] relative'>
         <Link href={'/'} className='pt-[4px]'>

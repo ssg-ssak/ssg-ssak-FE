@@ -118,6 +118,8 @@ function PointServicebottom() {
 
   </div>
 
+  <h3 className='text-[17px] font-semibold pt-[40px] px-[20px] pb-[16px]'>클럽 서비스</h3>
+
   <ClubService />
   
   </>

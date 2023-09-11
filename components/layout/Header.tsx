@@ -11,6 +11,7 @@ import { MyinfoLayoutData } from '@/datas/myinfo/myinfoLayoutData';
 import { BenefitsLayoutData } from '@/datas/benefits/BenefitsLayoutData';
 import { MyloungeLayoutData } from '@/datas/mylounge/MyloungeLayoutData';
 import { SpointLayoutData } from '@/datas/spoint/SpointLayoutData';
+import { MembershipLayoutData } from '@/datas/membership/MembershipLayoutData';
 
 function Header() {
   const pathname=usePathname().split('/')[1];
@@ -37,6 +38,9 @@ function Header() {
 
         : pathname==="spoint"
         ? <OverflowHeaderBottom data={SpointLayoutData}/>
+
+        : pathname==="membership"
+        ? <OverflowHeaderBottom data={MembershipLayoutData}/>
 
         : pathname==="myinfo"
         ? <OverflowHeaderBottom data={MyinfoLayoutData}/> //true 이면 myinfobottom가져오고
