@@ -125,8 +125,7 @@ function clubagree() {
             </p>
           </div>
           <div className='toggle_btn ml-[10px] relative'>
-            <input id="check01" type="checkbox" className='absolute w-20 h-9  z-[-1] left-0 top-0'/>
-            <label htmlFor="check01"> </label>
+          <Switch defaultSelected color="danger"></Switch>
           </div>
         </div>
       </div>

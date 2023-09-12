@@ -329,4 +329,44 @@ export const HeaderData =[
     pathname: '/spoint/pointservice/etc',
     title: '신세계포인트'
   },
+  {
+    id:67,
+    pathname: '/membership/club/beauty',
+    title: '멤버십 서비스'
+  },
+  {
+    id:68,
+    pathname: '/membership/club/biz',
+    title: '멤버십 서비스'
+  },
+  {
+    id:69,
+    pathname: '/membership/club/biz/mod',
+    title: '멤버십 서비스'
+  },
+  {
+    id:70,
+    pathname: '/membership/club/momkids',
+    title: '멤버십 서비스'
+  },
+  {
+    id:71,
+    pathname: '/membership/club/momkids/detail',
+    title: '멤버십 서비스'
+  },
+  {
+    id:72,
+    pathname: '/membership/club/parking',
+    title: '멤버십 서비스'
+  },
+  {
+    id:73,
+    pathname: '/membership/club/parking/detail',
+    title: '멤버십 서비스'
+  },
+  {
+    id:74,
+    pathname: '/membership/club/beauty',
+    title: '멤버십 서비스'
+  },
 ]
