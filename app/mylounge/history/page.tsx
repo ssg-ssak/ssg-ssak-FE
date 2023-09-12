@@ -37,17 +37,17 @@ function history() {
         </div>
     {/* TODO : 카드 모양 내부 리펙 필요 */}
         <div className='point_use_view w-[350px] h-[200px] bg-linear_93 rounded-3xl relative'>
-          <div className='point_use_cont flex bg-white rounded-[25px] h-[187px] m-[2px]'>
-            <div className='flex flex-col space-y-28 w-[191px] h-[200px] p-[16px] text-[13px] my-[2px]'>
-              <p>신세계포인트 <br /> 이용</p>
+          <div className='point_use_cont flex bg-white rounded-[25px] w-[346px] h-[196px] m-[2px] absolute box-border'>
+          <div className='flex flex-col space-y-28 w-[191px] h-[200px] p-[16px] text-[13px] my-[2px] relative'>
+              <p className='font-semibold'>신세계포인트 <br /> 이용</p>
               <p className='align-bottom'>2023년</p>
             </div>
             <div className='point_bar_wrap flex flex-1 items-center relative z-1'>
-            <ul className='bar_accumulate mr-[55px] h-full'>
+            <ul className='bar_accumulate mr-[55px] h-[210px]'>
               <li className='flex flex-col items-end h-full box-border pt-[45px] pb-[16px]'>
                 <div className='bar_graph w-[24px] h-full rounded-[30px] mt-auto relative bg-[#ea035c]'>
-                  <span className='after:absolute after:z-1 after:left-1/2 after:top-[-10px] after:ml-[-6px] after:w-0 after:h-0 after:border-t-[6px] after:border-[#ea035c] after:outline-none after:border-r-[6px] after:border-l-[6px]'>
-                    <span className='point_count ff_lato text-[11px] text-white absolute top-[-30px] bg-[#ea035c]
+                  <span className='after:absolute after:z-1 after:left-1/2 after:top-[-10px] after:ml-[-6px] after:border-t-[6px] after:border-[#ea035c] after:border-x-[6px] after:border-l-transparent after:border-r-transparent after:border-b-0'>
+                    <span className='point_count ff_lato text-[12px] text-white absolute top-[-30px] left-[-8px] bg-[#ea035c]
                     h-[22px] z-1 rounded-[4px] leading-[21px] px-[7px] w-auto font-bold min-w-[39px]'>
                       6P
                     </span>
@@ -56,11 +56,11 @@ function history() {
                 <p className='accumulate_txt text-[13px] leading-[21px] mt-[8px] font-semibold'> 적립 </p>
               </li>
             </ul>
-            <ul className='bar_us h-full'>
+            <ul className='bar_us h-[210px]'>
               <li className='flex flex-col h-full box-border pt-[45px] pb-[16px] etems-end'>
                 <div className='bar_graph h-0 bg-[#5c1880] w-[24px] rounded-[30px] mt-auto relative'>
-                  <span>
-                    <span className='point_count ff_lato text-[11px] text-white absolute top-[-30px] left-1/2 block 
+                  <span className='after:absolute after:z-1 after:left-1/2 after:top-[-10px] after:ml-[-6px] after:border-t-[6px] after:border-[#5c1880] after:border-x-[6px] after:border-l-transparent after:border-r-transparent after:border-b-0'>
+                    <span className='point_count ff_lato text-[11px] text-white absolute top-[-30px] left-[-8px] block 
                     h-[22px] z-1 rounded-[4px] leading-[21px] px-[7px] w-auto font-bold min-w-[39px] bg-[#5c1880]'>0P</span>
                   </span>
                 </div>
