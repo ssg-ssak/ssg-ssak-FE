@@ -30,15 +30,15 @@ function SideMenu(props: {isLogin:Boolean, isOpened: Boolean, setIsOpened:React.
       <div className={isOpened ? styles.overlay : ''} onClick={()=>setIsOpened(!isOpened)}>
 			</div>
       {/* sidemenu 안에 div */}
-      <div className={isOpened ? `${styles.sidemenuwrap} ${styles.open}` : `${styles.sidemenuwrap}` }>
+      <div className={isOpened ? `${styles.sidemenuwrap} ${styles.open} scrollbar-hide` : `${styles.sidemenuwrap}` }>
         <div className={`${styles.lnb_header} flex justify-between`}>
           <Logo url={'/'} imgUrl={'https://m.shinsegaepoint.com/img/logo_header.840b502c.gif'} imgAlt={'신세계포인트 로고'} />
           <div className='pr-6' onClick={()=>setIsOpened(!isOpened)}>
             <Image
             src="/images/sidemenu/ximage.png"
             alt='닫힘버튼'
-            width={20}
-            height={20}></Image>
+            width={15}
+            height={15}></Image>
           </div>
         </div>
 

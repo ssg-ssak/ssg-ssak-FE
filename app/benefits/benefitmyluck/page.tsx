@@ -1,11 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 
 function benefitmyluck() {
   return (
 
     <div className='mt-[105px]'>
+      <LoginRedirectModal/>
       <div className=' px-[20px] py-[40px]'>
         <Image
           src={`/images/benefits/myluck.png`}

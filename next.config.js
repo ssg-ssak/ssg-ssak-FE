@@ -6,15 +6,7 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_API_URL: 'http://10.10.10.185:8000',
   },
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/logout',
-  //       destination: '/',
-  //       permanent: true,
-  //     },
-  //   ]
-  // },
+
 };
 
 module.exports = nextConfig;

@@ -21,6 +21,7 @@ function SignUpStepper() {
     userId : "", 
     userName : "",
     birth:"",
+    email:"",
     userPassword : "",
     checkPassword :"",
     phoneNumber : "",

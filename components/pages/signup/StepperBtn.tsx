@@ -1,5 +1,7 @@
 'use client'
+import SignUpErrModal from '@/components/ui/modal/LoginCheckModal'
 import { SignupType } from '@/types/signup/SignupType'
+import { error } from 'console'
 import { useRouter } from 'next/navigation'
 import React, { SetStateAction, useState } from 'react'
 
@@ -8,11 +10,11 @@ function StepperBtn({btnText, stepId, setStepId,signUpData,setSignUpData} : {btn
 
   // console.log(stepId);
   
-
   interface ErrorSignupType{
     userId : string, 
     userName : string,
     birth:string,
+    email:string,
     userPassword : string,
     checkPassword :string,
     phoneNumber : string,
@@ -21,11 +23,22 @@ function StepperBtn({btnText, stepId, setStepId,signUpData,setSignUpData} : {btn
     detailaddress:string,
   }
 
+  interface postSingupType{
+    userId : string, 
+    userName : string,
+    birth:string,
+    email:string,
+    userPassword : string,
+    phoneNumber : string,
+    address:string
+  }
+
   const handleSignupFetch= async ()=>{
     let errText:ErrorSignupType={
       userId : "", 
       userName : "",
       birth:"",
+      email:"",
       userPassword : "",
       checkPassword :"",
       phoneNumber : "",
@@ -33,6 +46,11 @@ function StepperBtn({btnText, stepId, setStepId,signUpData,setSignUpData} : {btn
       address : "",
       detailaddress:"",
     }
+    //주소 통합
+    const addressdata=`${signUpData.zonecode},${signUpData.address},${signUpData.detailaddress}`
+    // postdata 만들기
+    
+    
 
     if (stepId===2){
         // 본인인증 error
@@ -67,14 +85,38 @@ function StepperBtn({btnText, stepId, setStepId,signUpData,setSignUpData} : {btn
           alert(errText.zonecode)
         }else if(errText.detailaddress){
           alert(errText.detailaddress)
+        }else{
+          
         }
       }else{
         // fetch를 해야함 여기서
+        // console.log('!!!!!!!!!!!!!!!!!!');
+        console.log(signUpData)
+        fetch(`http://10.10.10.185:8000/api/v1/auth/sign-up`, {
+          method: "POST", // *GET, POST, PUT, DELETE 등
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId:signUpData.userId,
+            userName:signUpData.userName,
+            userPassword:signUpData.userPassword,
+            phoneNumber:signUpData.phoneNumber,
+            address:addressdata,
+            email:signUpData.email,
+          }) // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
+        }).then(
+          res => console.log(res)
+        ).catch(
+          error => console.log(error)
+        )
         setStepId(stepId + 1)
+      }
+        
       }
     }
 
-  }
+
 
   return (
     <div className='px-4'>

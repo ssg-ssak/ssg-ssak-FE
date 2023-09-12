@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { couponListdata } from '@/datas/coupon/CouponListData'
 import { couponListType } from '@/types/coupon/CouponListType'
 
-function CouponListWrap() {
+function CouponListWrap({isLogin,modalStatus}:{isLogin:Boolean,modalStatus:any}) {
   return (
     <>
       <ul>
@@ -52,7 +52,7 @@ function CouponListWrap() {
                         width={20}
                       ></Image>
                     </div>
-                    <div>
+                    <div onClick={isLogin ? ()=>null : ()=>modalStatus("쿠폰 다운을 위해 먼저 로그인해 주세요.",true)}>
                       <Image
                         src="/images/coupon/downloadlogo.png"
                         alt="다운로드로고"

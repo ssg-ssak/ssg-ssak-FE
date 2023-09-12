@@ -101,6 +101,15 @@ function SignupForm(props: {signUpData: SignupType, setSignUpData: React.Dispatc
             </div>
           </div>
         </div>
+        
+        {/* 이메일 */}
+        <div className='pt-6'>
+          <p className='text-[14px] font-semibold'>이메일주소
+          </p>
+          <div className=' mt-2 border-[2px]  h-[48px] rounded-lg w-full'>
+            <input onChange={handleOnChange} name="email" className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px] ' placeholder='이메일' type="email" />
+          </div>
+        </div>
 
         {/* 주소입력 */}
         <div className='pt-6'>
@@ -110,7 +119,6 @@ function SignupForm(props: {signUpData: SignupType, setSignUpData: React.Dispatc
           <SignUp signUpData={signUpData} setSignUpData={setSignUpData}/>
           <div className=' mt-2 border-[2px]  h-[48px] rounded-lg w-full'>
             <input onChange={handleOnChange} name="detailaddress" className=' text-[12px] font-semibold align-middle w-full pl-3 h-[45px] ' placeholder='상세주소' type="text" />
-            
           </div>
         </div>
       </form>

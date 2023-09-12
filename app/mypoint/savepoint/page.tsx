@@ -1,10 +1,12 @@
 import Linearbutton from '@/components/ui/button/Linearbutton'
 import CertForm from '@/components/ui/cert/CertForm'
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 import React from 'react'
 
 function page() {
   return (
     <section className='pt-[106px]'>
+      <LoginRedirectModal/>
       <div className='p-4 py-10'>
         <p className='text-[19px] font-semibold pb-3'> 포인트 적립을 깜빡하셧나요? <br /><strong className='text-[#ea035c]'>영수증 정보만 입력해 주세요.</strong> </p>
         <p className='text-[13px] font-semibold text-slate-500'> 이마트, 신세계백화점, 이마트 에브리데이에서<br />구매하신 영수증 정보로 포인트 적립이 가능합니다.</p>
