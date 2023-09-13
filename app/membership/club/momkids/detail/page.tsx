@@ -26,20 +26,10 @@ function momdetail(props: {types:string}) {
     const id = target.dataset.id;
     const value = target.getAttribute('value');
 
-    if(id!==undefined && id==="cert" && value!==null){
-      setCertData({
-        ...certData,
-        cert:value});
-    }
     if(id!==undefined && id==="gender" && value!==null){
       setCertData({
         ...certData,
         gender:value});
-    }
-    if(id!==undefined && id==="foreigner" && value!==null){
-      setCertData({
-        ...certData,
-        foreigner:value});
     }
     
   }

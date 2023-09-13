@@ -369,4 +369,9 @@ export const HeaderData =[
     pathname: '/membership/club/beauty',
     title: '멤버십 서비스'
   },
+  {
+    id:75,
+    pathname: '/mypage',
+    title: '마이 페이지'
+  },
 ]
