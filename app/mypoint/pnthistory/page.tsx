@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '@/components/pages/mypoint/Card'
 import PointList from '@/components/pages/mypoint/PointList'
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 
 async function pntHistory() {
   const receiptsEventLogo="before:bg-[url('/images/mypoint/receiptEventLogo.png')] before:absolute before:left-6 before:mt-[-20px] before:bg-no-repeat before:w-10 before:h-10 before:bg-cover before:top-1/2"
@@ -9,6 +10,7 @@ async function pntHistory() {
 
   return (
     <section className='pt-[106px]'>
+      <LoginRedirectModal/>
       {/* 포인트 카드 형식 */}
       <Card types={"pnthistory"}/>
       {/* 신세계포인트 영수증 한 번에 모아보기 배너 */}

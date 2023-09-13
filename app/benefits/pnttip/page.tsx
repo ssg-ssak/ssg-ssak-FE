@@ -1,9 +1,11 @@
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 import React from 'react'
 
 function pnttip() {
   return (
     <>
       <div className='mt-[105px] px-[20px] py-[40px]'>
+        <LoginRedirectModal/>
         <p className='text-[18px] font-semibold'><strong className='text-[18px] text-[#ea035c] font-semibold'>포인트 적립</strong>도 스마트하게!</p>
         <p className='pt-[8px] text-[13px] text-gray-500'>보기만 해도 쌓이는 초간단 꿀팁을
           <br />

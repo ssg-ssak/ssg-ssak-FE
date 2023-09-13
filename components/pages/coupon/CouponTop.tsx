@@ -1,20 +1,40 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import LoginCheckModal from '@/components/ui/modal/LoginCheckModal';
 
 function CouponTop() {
   const [addCoupon,setaddCoupon]=useState<string>('hidden');
+  const [isLogin, setIsLogin] =useState<Boolean>(false)
   const route=useRouter();
+  const session=useSession();
 
+  const [modaltext,setModalText]=useState<string>("");
+  const [modalIsOpen,setModalStatus]=useState<boolean>(false)
+  const modalStatus=(modaltext:string,modalIsOpen:boolean)=>{
+    setModalText(modaltext)
+    setModalStatus(modalIsOpen)
+  }
+
+  useEffect(()=>{
+    setIsLogin(session.status==="authenticated")
+  },[session])
+
+  // console.log(isLogin);
+  
   const handleAddCoupon=()=>{
     if(addCoupon==""){
       setaddCoupon("hidden")
     }else{
       setaddCoupon("")
     }
-    
   }
+
+  
+
+  
 
 
   return (
@@ -29,11 +49,13 @@ function CouponTop() {
         </div>
 
         {/* 마이쿠폰함이동,쿠폰등록 */}
+        <LoginCheckModal errMsg={modaltext} modalStatus={modalIsOpen} setModalStatus={setModalStatus}/>
         <div className='pb-[7%] bg-[url("/images/coupon/couponbot.png")] bg-no-repeat bg-[100%_auto] bg-bottom'>
           <div className='bg-[#ffc191] p-[10px] pb-[30px] relative'></div>
           <div className='relative bg-[#ffc191] pt-[6px] px-5 pb-[10px]'>
             <ul className='flex justify-center'>
-              <li className='mr-[50px] text-[13px] w-[167px] text-center font-semibold' onClick={()=>route.push('/benefits/mycoupon')}>
+              <li className='mr-[50px] text-[13px] w-[167px] text-center font-semibold' 
+              onClick={isLogin ? ()=>route.push('/benefits/mycoupon') : ()=>modalStatus("마이쿠폰함 이용을 위해 먼저 로그인해 주세요.",true)}>
                 <Image
                 className='pt-3 ml-[45px] pb-2' 
                 src="/images/coupon/mycoupon.png"
@@ -43,7 +65,7 @@ function CouponTop() {
                 ></Image>
                 마이쿠폰함으로 이동
               </li>
-              <li className='text-[13px] w-[167px] text-center font-semibold' onClick={handleAddCoupon}>
+              <li className='text-[13px] w-[167px] text-center font-semibold' onClick={isLogin?handleAddCoupon:()=>modalStatus("쿠폰등록를 위해 먼저 로그인해 주세요.",true)}>
                 <Image
                   className='pt-3 ml-[49px] pb-2' 
                   src="/images/coupon/addcoupon.png"

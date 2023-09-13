@@ -1,4 +1,5 @@
 import Linearbutton from '@/components/ui/button/Linearbutton'
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 import React from 'react'
 
 function page() {
@@ -8,6 +9,7 @@ function page() {
 
   return (
     <section className='pt-[106px]'>
+      <LoginRedirectModal/>
       {/* 선물하기 위에 말 */}
       <div className='p-4 pt-10'>
         <p className='text-[19px] font-semibold'>마음을 담아 <br /> <strong className='text-red-600'>신세계포인트를 선물</strong>하세요.

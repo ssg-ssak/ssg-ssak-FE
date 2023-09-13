@@ -5,12 +5,13 @@ import Image from 'next/image'
 import Card from '@/components/pages/mypoint/Card'
 import Whitebutton from '@/components/ui/button/Whitebutton'
 import Linearbutton from '@/components/ui/button/Linearbutton'
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 
 function cardManage() {
   
   return (
     <section className='pt-[106px]'>
-
+        <LoginRedirectModal/>
         <div className='point_info_cardbox  p-6 bg-white'>
           {/* 총 몇건의 신세계포인트 정보 */}
           <Card types={"cardmanage"}/>

@@ -1,9 +1,11 @@
 import Blackbutton from '@/components/ui/button/Blackbutton'
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 import React from 'react'
 
 function page() {
   return (
     <section className='pt-[106px]'>
+      <LoginRedirectModal/>
       {/* 포인트 선물 위에 말 */}
       <div className='p-4 pt-10'>
         <p className='text-[19px] font-semibold'>선물하기

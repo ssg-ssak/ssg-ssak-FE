@@ -149,7 +149,7 @@ function SignupCertForm(props: {signUpData: SignupType, setSignUpData: React.Dis
                 </select>
               </div>
                 <form className='mt-2'>
-                  <input name='phoneNumber' onChange={handleOnChange} type="number" placeholder='-없이 휴대폰 번호 입력'
+                  <input name='phoneNumber' onChange={handleOnChange} type="number" placeholder='- 없이 휴대폰 번호 입력'
                   className='w-full h-[48px] border border-black-500 px-[16px] rounded-[8px] pointer-events-auto text-[13px] font-semibold'/>
                 </form>
               </div>

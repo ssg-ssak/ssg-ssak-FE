@@ -37,7 +37,11 @@ function SignupSuccess(props: {signUpData: SignupType, setSignUpData: React.Disp
             {signUpData.address} <br />
             {signUpData.detailaddress}
           </p>
-          
+          <p className='pb-3'>
+            <strong>이메일</strong>
+            <br />
+            {signUpData.email} <br />
+          </p>
         </div>
       </div>
 

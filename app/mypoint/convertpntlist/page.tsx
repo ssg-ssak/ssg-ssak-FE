@@ -1,10 +1,12 @@
 import Linearbutton from '@/components/ui/button/Linearbutton'
 import Redbutton from '@/components/ui/button/Redbutton'
+import LoginRedirectModal from '@/components/ui/modal/LoginRedirectModal'
 import React from 'react'
 
 function Convertpntlist() {
   return (
     <section className='pt-[106px]'>
+      <LoginRedirectModal/>
       <div className='p-4 py-10'>
         <p className='text-[19px] font-medium pb-3'> 여기저기 흩어져 있는 포인트를 <br /> 신세계포인트로 <strong className='text-red-500'>한 곳에 모아보세요.</strong> </p>
         <p className='text-[13px] font-semibold text-slate-500'> 알뜰하게 적립한 포인트를 모두 모아<br />자주 사용하는 포인트로 전환해 보세요.</p>
