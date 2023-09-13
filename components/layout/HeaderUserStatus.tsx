@@ -1,8 +1,19 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 function HeaderUserStatus() {
+  const [point,setPoint]=useState<number>(0);
+
+  useEffect(()=>{
+    const getPoint=()=>fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/log-in`)
+    .then(response=>response.json)
+    .then(data =>{
+      console.log(data);
+      // setPoint(data)
+    })
+    getPoint()
+  },[])
   return (
     <>
       <div className='flex gap-1'>

@@ -14,7 +14,7 @@ function LoginRedirectModal() {
       ?
       null
       :
-      redirect('/login')
+      redirect(`/login`)
     }
     </>
   )

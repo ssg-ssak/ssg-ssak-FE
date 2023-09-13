@@ -7,7 +7,7 @@ function benefitmyluck() {
   return (
 
     <div className='mt-[105px]'>
-      <LoginRedirectModal/>
+      <LoginRedirectModal />
       <div className=' px-[20px] py-[40px]'>
         <Image
           src={`/images/benefits/myluck.png`}
