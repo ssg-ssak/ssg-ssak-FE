@@ -4,7 +4,9 @@ const nextConfig = {
     domains: ["m.shinsegaepoint.com","s3-alpha-sig.figma.com"],
   },
   env: {
-    NEXT_PUBLIC_API_URL: 'http://15.164.17.12:8000/',
+    NEXTAUTH_SECRET:'mLwkryvhB60SjELI4g/xnIV/sq9VZznaRjhxTJ8zkI8=',
+    NEXT_PUBLIC_API_URL:'http://15.164.17.12:8000'
+    // 15.164.17.12
   },
 
 };
