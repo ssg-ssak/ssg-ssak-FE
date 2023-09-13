@@ -26,9 +26,11 @@ function benefitmyluck() {
 
       <div className='btn_box px-[20px] pb-[40px]'>
         <div className='px-[16px] py-[12px] text-center text-[14px] font-bold rounded-lg bg-linear_110'>
+          <Link href={"https://shinsegaepoint.sinbiun.com/mobile/"} target='_blank'>
             <button>
               나의 운세 보러가기
             </button>
+            </Link>
         </div>
       </div>
 

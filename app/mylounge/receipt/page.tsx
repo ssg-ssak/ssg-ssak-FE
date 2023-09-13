@@ -13,11 +13,27 @@ function receipt() {
     setChecked(!Checked)
   } */
 
+  const [termsChecked, setTermsChecked] = useState(false);
+  const [CheckboxDisabled, setCheckboxDisabled] = useState(true);
+
+  const handleTermsChange = () => {
+    setTermsChecked(!termsChecked);
+
+    if (!termsChecked) {
+      setCheckboxDisabled(false);
+    } else {
+      setCheckboxDisabled(true);
+    }
+  };
+
+
   const filterImage="after:w-[20px] after:h-[19px] after:bg-[url('/images/mypoint/filterImage.png')] after:bg-cover after:bg-no-repeat after:inline-block"
   const plusLogo='before:bg-[url("/images/mypoint/plusLogo.jpg")] before:bg-cover before:bg-center before:bg-[length:7px] before:bg-no-repeat  before:inline-block before:w-4 before:h-4 before:bg-[#ea035c] before:rounded-[50%] before:mt-[2px] before:mr-2 '
   const minusLogo='before:bg-[url("/images/mypoint/minusLogo.jpg")] before:bg-auto before:bg-center before:bg-[length:16px] before:bg-no-repeat  before:inline-block before:w-4 before:h-4 before:bg-[#ea035c] before:rounded-[50%] before:mt-[2px] before:mr-2 '
   const noTxtLogo="after:absolute after:left-[50%] after:w-[48px] after:h-[48px] after:bg-[url('/images/mypoint/noTxtLogo.jpg')] after:bg-cover after:translate-x-[-50%] after:top-0"
 
+  const noclick="border inline-block w-full h-[49px] text-center leading-[49px] bg-white"
+  const clickred="border inline-block w-full h-[49px] text-center leading-[49px] text-white bg-[#ea035c]"
   return (
     <>
 
@@ -44,8 +60,8 @@ function receipt() {
       <ul className='agree_list_bnt h-10'>
         <li className='agree_form relative'>
           <div className='check_box'>
-            <input id='checkbox1' className='align-middle w-[20px] h-[20px] appearance-none border rounded-full checked:bg-black border-black'
-            type ="checkbox" /*onClick={handleCheck} *//>
+            <input id='checkbox1' className='align-middle w-[20px] h-[20px] appearance-none border rounded-full checked:bg-black border-black' type ="checkbox" checked={termsChecked}
+            onChange={handleTermsChange} />
             <label className='pl-[10px] align-top'>
               <span className='text-[11px] font-semibold'>[선택] 전자영수증 조회를 위한 제 3자 제공동의</span>
             </label>
@@ -64,17 +80,24 @@ function receipt() {
       </ul>
 
       <div className='check_box'>
-        <input id='checkbox2' 
+        <input id='checkbox2'  disabled={CheckboxDisabled}
         className={`align-middle w-[20px] h-[20px] appearance-none border rounded-full checked:bg-black border-black `}
         type ="checkbox" /*{Checked? disabled:null}*//>
           <label className='pl-[10px] align-top'>
-            <span className='text-[11px] font-semibold'>전체 선택</span>
+            <span className='text-[11px] font-semibold '>전체 선택</span>
           </label>
       </div>
 
       <div className='brand_info mt-[20px] mb-[25px]' >
         <ul id='list_cnt' className='text-[11px] text-[#767676]'>
-          <li className='border inline-block w-1/3 h-[49px] text-center leading-[49px]'>(주)신세계푸드</li>
+        
+          <div className='border inline-block w-1/3 h-[49px]'>
+            <label className='border inline-block w-full h-[49px] text-center leading-[49px]'>
+            <input type="checkbox"  disabled={CheckboxDisabled}
+            className='appearance-none absolute left-5 w-[116px] h-[49px] text-center leading-[49px] checked:-z-1 checked:bg-[#ea035c] checked:text-white' />
+            <span>(주)신세계푸드</span>
+            </label>
+          </div>
           <li className='border inline-block w-1/3 h-[49px] text-center leading-[49px]'>(주)신세계사이먼</li>
           <li className='border inline-block w-1/3 h-[49px] text-center leading-[49px]'>(주)신세계조선호텔</li>
           <li className='border inline-block w-1/3 h-[49px] text-center leading-[49px]'>(주)이마트</li>
