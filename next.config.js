@@ -9,6 +9,7 @@ const nextConfig = {
     // 15.164.17.12
   },
 
+
 };
 
 module.exports = nextConfig;
