@@ -19,7 +19,7 @@ export default function HeaderTop() {
   const [user,setUser]=useState<userType>(
     {
       userName:"",
-      userBarcodeNumber:""
+      userBarcodeNumber:"0"
     }
   );
   const pathname = usePathname();
@@ -68,6 +68,7 @@ export default function HeaderTop() {
   
   
   useEffect(()=>{
+    if(!token) return
     getFetch()
     getPoint()
 
