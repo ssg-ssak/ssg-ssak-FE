@@ -40,7 +40,7 @@ function PointList() {
     totalRows: 0,
     usedTotalPoint: 0
   })
-  // console.log(fetchData);
+  console.log(fetchData);
   
   
   useEffect(()=>{
@@ -86,18 +86,28 @@ function PointList() {
                   
                   <div className='flex flex-1 flex-wrap items-center text-[14px] leading-6 px-2 font-semibold'>
                     {/* {p.store} <br/> */}
-                    <div className='text-[12px]'>
-                      <StoreFetch id={p.id} token={token}/>
-                    </div>
+                    {
+                      p.type==="STORE"
+                      ?
+                      <div className='text-[12px]'>
+                        <StoreFetch id={p.id+214} token={token}/>
+                      </div>
+                      :p.type==="ATTENDANCE"?
+                      <div className='text-[12px]'>
+                        출석체크로 포인트 적립
+                      </div>
+                      :null
+                    }
+                    
                     
                     
                       {
                         p.isEvent?
-                        null
-                        :
                         <span className='text-[9px] pt-1 leading-3 text-[#767676] w-full'>
                           [APP] 이벤트로 참여
                         </span>
+                        :
+                        null
                       }
                     
                   </div>
