@@ -82,7 +82,7 @@ function LoginForm() {
   useEffect(() => {
     if(typeof window !== 'undefined') {
       const autoLogin = localStorage.getItem('autoLogin') || '';
-      console.log("localStorage",autoLogin.length > 0 ? autoLogin : 'no data');
+      // console.log("localStorage",autoLogin.length > 0 ? autoLogin : 'no data');
       if(autoLogin) {
         setLoginData({
           ...loginData,
