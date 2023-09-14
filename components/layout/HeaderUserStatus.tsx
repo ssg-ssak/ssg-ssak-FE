@@ -3,36 +3,9 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react';
 
-function HeaderUserStatus() {
-  const [point,setPoint]=useState<number>(-1);
-  const token=useSession().data?.user["token"];
-  // console.log(token);
+function HeaderUserStatus({point}:{point:number}) {
 
   
-
-  useEffect(()=>{
-    const getFetch = async () => {
-      try {
-          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/point/possible`,{
-            method:'GET',
-            headers:{
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${token}`
-            }
-          })
-          .then(response=>response.json())
-          .then(data=>{
-            // console.log(data);
-            setPoint(data.possiblePoint)
-          })
-
-      } catch (error) {
-          console.log('point/possible 에러나면 이쪽으로');
-          
-      }
-    }
-    getFetch();
-  },[token])
   return (
     <>
       <div className='flex gap-1'>

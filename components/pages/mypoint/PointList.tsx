@@ -5,6 +5,7 @@ import { pointListType } from '@/types/mypoint/pointListType'
 // import { pointList } from '@/datas/mypoint/pointListData'
 import { useSession } from 'next-auth/react'
 import SortSelect from './SortSelect'
+import StoreFetch from './StoreFetch'
 
 export interface pointListType1{
   addTotalPoint:number,
@@ -39,7 +40,7 @@ function PointList() {
     totalRows: 0,
     usedTotalPoint: 0
   })
-  console.log(fetchData);
+  // console.log(fetchData);
   
   
   useEffect(()=>{
@@ -70,25 +71,38 @@ function PointList() {
               fetchData &&
               fetchData.pointList.map((p:pointListType,idx)=>(
                 <li key={idx} className='flex border-b items-center relative flex-wrap min-h-[74px]'>
-                  <p className={`w-[90px] text-[#ea035c] text-sm font-semibold ${plusLogo}`}>
+                  {p.used
+                  ?
+                  <div className={`w-[90px] text-[#ea035c] text-sm font-semibold ${minusLogo}`}>
                     {p.totalPoint}P
+                    <span className='block text-[11px] font-normal pl-[23px] pt-[2px]'>{p.type==="STORE"?"":""}</span>
+                  </div>
+                  :
+                  <div className={`w-[90px] text-[#ea035c] text-sm font-semibold ${plusLogo}`}>
+                    {p.updatePoint}P
                     <span className='block text-[11px] font-normal pl-[23px] pt-[2px]'>{p.type==="STORE"?"결재적립":""}</span>
-                  </p>
-                  <p className='flex flex-1 flex-wrap items-center text-[14px] leading-6 px-2 font-semibold'>
+                  </div>
+                  }
+                  
+                  <div className='flex flex-1 flex-wrap items-center text-[14px] leading-6 px-2 font-semibold'>
                     {/* {p.store} <br/> */}
+                    <div className='text-[12px]'>
+                      <StoreFetch id={p.id} token={token}/>
+                    </div>
+                    
                     
                       {
                         p.isEvent?
                         null
                         :
-                        <span className='text-[11px] pt-1 leading-3 text-[#767676] w-full'>
-                          {/* {p.sub_type} */}
+                        <span className='text-[9px] pt-1 leading-3 text-[#767676] w-full'>
+                          [APP] 이벤트로 참여
                         </span>
                       }
                     
-                  </p>
+                  </div>
                   <div className='absolute top-4 right-[5px]'>
-                    <p className='text-[11px] leading-5 text-[#767676] min-w-[62px]'>{`${p.createAt[0]}-${p.createAt[1]}-${p.createAt[2]}`}</p>
+                    <div className='text-[11px] leading-5 text-[#767676] min-w-[62px]'>{`${p.createAt[0]}-${p.createAt[1]}-${p.createAt[2]}`}</div>
                     {
                       p.type==="STORE"?
                       <button className='text-[12px] text-[#767676] mt-2'>영수증 보기 {">"}</button>
