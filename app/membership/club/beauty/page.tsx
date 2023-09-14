@@ -11,24 +11,50 @@ function beauty() {
 const session = useSession()
 
 const token=session.data?.user.token
-console.log(token)
-  const postFetch = async () => {
-    try {
-        await fetch('http://15.164.17.12:8001/api/v1/club/beauty',{
-          method:'POST',
-          headers:{
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
-          }
-        })
-        .then(response=>response.json())
-        .then(data=>console.log(data));
+// console.log(token)
+// console.log("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTg0ZmRmZi0yMmU2LTQwYjktYjI4ZC02MmJkZTFiMzk2NTMiLCJ1dWlkIjoiMjE4NGZkZmYtMjJlNi00MGI5LWIyOGQtNjJiZGUxYjM5NjUzIiwiaWF0IjoxNjk0Njc3MTU3LCJleHAiOjE2MDk0Njc3MTU3fQ.WEzT9uES-5fZzm-7pyLkEsiSxn75BitC9li8LH81Z8YjTLuIsGBCoWIsCGuw4C617A9ULTlgDapq_YqsIUa11A"==="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTg0ZmRmZi0yMmU2LTQwYjktYjI4ZC02MmJkZTFiMzk2NTMiLCJ1dWlkIjoiMjE4NGZkZmYtMjJlNi00MGI5LWIyOGQtNjJiZGUxYjM5NjUzIiwiaWF0IjoxNjk0Njc3MTU3LCJleHAiOjE2MDk0Njc3MTU3fQ.WEzT9uES-5fZzm-7pyLkEsiSxn75BitC9li8LH81Z8YjTLuIsGBCoWIsCGuw4C617A9ULTlgDapq_YqsIUa11A");
+
+  // const postFetch = async () => {
+    
+  //   try {
+  //       const res = await fetch(`http://15.164.17.12:8001/api/v1/club/beauty`,{
+  //         method:'POST',
+  //         headers:{
+  //           "Content-Type": "application/json",
+  //           "Authorization": `Bearer ${token}`
+  //         }
+  //       })
+  //       .then(response=>response.json())
+  //       .then(data=>console.log(data)
+  //       )
         
+  //     } catch (error) {
+  //         console.log(error);
+  //         return
+  //   }
+  // }
+
+  useEffect(()=>{
+    const getFetch = async () => {
+      try {
+          const res = await fetch(`http://15.164.17.12:8000/api/v1/point/clublist`,{
+            method:'GET',
+            headers:{
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            }
+          })
+          .then(response=>response.json())
+          .then(data=>console.log(data))
+
+          
       } catch (error) {
-          console.log(error);
+          // console.log(error);
           return
+      }
     }
-  }
+    getFetch()
+  },[token])
 
   return (
     <>
@@ -83,7 +109,8 @@ console.log(token)
           <li className='mt-[8px] inline-block w-1/3'>· 네이저리퍼블릭</li>
         </div>
       </div>
-      <div className='mt-6 bg-linear_110 text-center text-[14px] font-semibold h-[48px] rounded-[8px] leading-[48px]' onClick={()=>postFetch()}>가입하기</div>
+      <div className='mt-6 bg-linear_110 text-center text-[14px] font-semibold h-[48px] rounded-[8px] leading-[48px]' 
+      >가입하기</div>
 
       {/* <Linearbutton contents='가입하기' url='/membership/club' /> */}
     </div>

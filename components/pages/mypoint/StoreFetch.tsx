@@ -5,7 +5,7 @@ function StoreFetch({id,token}:{id:number,token:string}) {
   
   const [storeName,setStoreName]=useState<string>();
   // console.log(id);
-  // console.log(storeName);
+  console.log(storeName);
   
   useEffect(()=>{
     const getFetch = async () => {
