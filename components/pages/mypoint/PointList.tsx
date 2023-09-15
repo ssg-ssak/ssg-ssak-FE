@@ -74,7 +74,7 @@ function PointList() {
                   {p.used
                   ?
                   <div className={`w-[90px] text-[#ea035c] text-sm font-semibold ${minusLogo}`}>
-                    {p.totalPoint}P
+                    {p.updatePoint}P
                     <span className='block text-[11px] font-normal pl-[23px] pt-[2px]'>{p.type==="STORE"?"":""}</span>
                   </div>
                   :
@@ -90,11 +90,27 @@ function PointList() {
                       p.type==="STORE"
                       ?
                       <div className='text-[12px]'>
-                        <StoreFetch id={p.id+214} token={token}/>
+                        <StoreFetch id={p.id} token={token}/>
                       </div>
                       :p.type==="ATTENDANCE"?
                       <div className='text-[12px]'>
                         출석체크로 포인트 적립
+                      </div>
+                      :p.type==="ROULETTE"?
+                      <div className='text-[12px]'>
+                        럭키룰렛로 포인트 적립
+                      </div>
+                      :p.type==="PARTNER"?
+                      <div className='text-[12px]'>
+                        제휴 포인트
+                      </div>
+                      :p.type==="EXCHANGE"?
+                      <div className='text-[12px]'>
+                        전환 포인트
+                      </div>
+                      :p.type==="GIFT"?
+                      <div className='text-[12px]'>
+                        선물 포인트
                       </div>
                       :null
                     }
