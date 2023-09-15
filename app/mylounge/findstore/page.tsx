@@ -2,6 +2,8 @@
 
 import React from 'react'
 import Script from "next/script";
+import { useSession } from 'next-auth/react';
+import { useState } from 'react';
 import { useEffect, useRef } from "react";
 import { Coordinates } from '@/types/mylounge/store';
 import { NaverMap } from '@/types/mylounge/map';
@@ -40,7 +42,38 @@ const Map = ({
       if (onLoad) {
           onLoad(map);
       }
+
+      // fetch함수
+      const session = useSession()
+      const [places, setPlaces] = useState([]);
+
+      const token=session.data?.user.token
+      console.log(token)
+        const getFetch = async () => {
+          try {
+              await fetch('http://15.164.17.12:8001/api/v1/store/map',{
+                method:'GET',
+                headers:{
+                  "Content-Type": "application/json",
+                  "Authorization": `Bearer ${token}`
+                }
+              })
+              .then(response=>response.json())
+              .then((data) => {
+                setPlaces(data);
+              })
+              
+              // (data=>console.log(data));
+              
+            } catch (error) {
+                console.log(error);
+                return
+          }
+        }
+
+
           // maker 찍는 함수
+          
     const position = new naver.maps.LatLng(35.169870, 129.128285);
 
     const markerOptions = {
@@ -54,8 +87,39 @@ const Map = ({
       }
   };
   
+  var contentString = [
+    '<div class="iw_inner" style="padding: 10px;">',
+    '   <h3 style="font-size: 13px; font-weight: 600;">서울특별시청</h3>',
+    '   <p style="color: #767676; font-size: 12px;">부산시 해운대구 우동</p>',
+    '</div>'
+].join('');
+
     const marker = new naver.maps.Marker(markerOptions);
+  
+    var infowindow = new naver.maps.InfoWindow({
+
+      content: contentString,
+  
+      maxWidth: 140,
+      backgroundColor: "white",
+      borderColor: "#ea035c",
+      borderWidth: 2,
+      anchorSize: new naver.maps.Size(10, 3),
+      anchorSkew: true,
+      anchorColor: "white",
+      pixelOffset: new naver.maps.Point(10, -5),
+      
+  });
+
+  naver.maps.Event.addListener(marker, "click", function(e) {
+      if (infowindow.getMap()) {
+          infowindow.close();
+      } else {
+          infowindow.open(map, marker);
+      }
+    });
   };
+
 
   
   //맵이 unmount되었을 때 맵 인스턴스 destory하기 
@@ -65,7 +129,7 @@ const Map = ({
       };
   }, []);
 
-
+  // makerwindow
 
   return (
       <>
