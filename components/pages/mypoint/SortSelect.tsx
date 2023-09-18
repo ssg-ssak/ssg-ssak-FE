@@ -53,7 +53,7 @@ function SortSelect({setFetchData}:{setFetchData: React.Dispatch<React.SetStateA
       }
     }
     getFetch()
-  },[startDate])
+  },[startDate,token])
 
   return (
     <div className='class_sch flex py-[14px] pr-[6px] items-center justify-between'>

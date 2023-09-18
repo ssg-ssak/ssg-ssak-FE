@@ -33,7 +33,7 @@ function Card(props:{types:String}) {
       }
     }
     getFetch()
-  },[token])
+  },[token,point])
 
   
 

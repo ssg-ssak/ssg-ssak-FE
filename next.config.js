@@ -5,7 +5,7 @@ const nextConfig = {
   },
   env: {
     NEXTAUTH_SECRET:'mLwkryvhB60SjELI4g/xnIV/sq9VZznaRjhxTJ8zkI8=',
-    NEXT_PUBLIC_API_URL:'http://15.164.17.12:8000'
+    NEXT_PUBLIC_API_URL:'http://15.164.17.12:80'
     // 15.164.17.12
   },
 

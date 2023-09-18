@@ -9,9 +9,9 @@ import { request } from 'http';
 
 function beauty() {
   // const [point,setPoint]=useState<number>(-1);
-const session = useSession()
+  const session = useSession()
 
-const token=session.data?.user.token
+  const token=session.data?.user.token
   const postFetch = async () => {
     // console.log("token : ", token)
     try {
@@ -29,6 +29,27 @@ const token=session.data?.user.token
 
       }
     }
+
+  useEffect(()=>{
+    const getFetch = async () => {
+      // console.log("token : ", token)
+      try {
+          await fetch('http://15.164.17.12:8001/api/v1/club/clublist',{
+            method:'GET',
+            headers:{
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            }
+          })
+          .then(response=>response.json())
+          .then(data=>console.log(data))
+        } catch (error) {
+            console.log(error);
+  
+        }
+      }
+      getFetch()
+  },[token])
 
 
   return (
