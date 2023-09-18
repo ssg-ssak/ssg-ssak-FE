@@ -5,7 +5,11 @@ const nextConfig = {
   },
   env: {
     NEXTAUTH_SECRET:'mLwkryvhB60SjELI4g/xnIV/sq9VZznaRjhxTJ8zkI8=',
+<<<<<<< Updated upstream
     NEXT_PUBLIC_API_URL:'http://15.164.17.12:80'
+=======
+    NEXT_PUBLIC_API_URL:'http://ssgssak.store:80'
+>>>>>>> Stashed changes
     // 15.164.17.12
   },
 
