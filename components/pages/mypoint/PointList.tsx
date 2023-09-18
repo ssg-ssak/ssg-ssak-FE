@@ -40,12 +40,12 @@ function PointList() {
     totalRows: 0,
     usedTotalPoint: 0
   })
-  console.log(fetchData);
+  // console.log(fetchData);
   
   
   useEffect(()=>{
     
-  },[token])
+  },[])
 
   return (
     <div className='point_list_box px-5 pt-[25px] pb-[60px]'>
